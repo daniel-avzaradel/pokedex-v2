@@ -1,15 +1,7 @@
-import { useState, useContext, createContext } from 'react';
+import Home from './components/Home';
 
 function App() {
-  const ThemeProvider = createContext(null);
-  const [theme, setTheme] = useState('light');
-  return (
-    <ThemeProvider value={{ theme, setTheme }}>
-      <div>
-        <h1>POKEDEX 2.0</h1>
-      </div>
-    </ThemeProvider>
-  );
+  return <Home />;
 }
 
 export default App;
