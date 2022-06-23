@@ -21,7 +21,7 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 
-const drawerWidth = 240;
+const drawerWidth = 200;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
@@ -70,7 +70,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 export default function Sidebar({ mode, toggleTheme }) {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -164,7 +164,9 @@ export default function Sidebar({ mode, toggleTheme }) {
         </List>
       </Drawer>
       <Main open={open}>
-        <DrawerHeader />
+        <Typography variant="h5" my={2}>
+          Pokedex Entries
+        </Typography>
         <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus
