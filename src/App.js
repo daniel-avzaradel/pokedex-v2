@@ -1,31 +1,36 @@
-import { useState } from 'react';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import React from 'react';
+import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home';
+import Sidebar from './components/Sidebar';
+import Rightbar from './components/Rightbar';
 
-import { Box } from '@mui/material';
+import { Box, createTheme, Stack, ThemeProvider } from '@mui/material';
 
 function App() {
-  const [mode, setMode] = useState('light');
-  const toggleTheme = (mode) => {
-    setMode((mode) => (mode === 'light' ? 'dark' : 'light'));
-  };
+  const [mode, setMode] = React.useState('light');
 
-  const theme = createTheme({
+  const darkTheme = createTheme({
     palette: {
       mode: mode,
       primary: {
-        main: '#B06E69',
-        light: '#E58A6A',
-        dark: '#9F4336',
-        contrastText: '#EEE9C2',
+        main: '#e00011',
       },
     },
   });
 
   return (
-    <ThemeProvider theme={theme}>
-      <Box bgcolor="background.default" sx={{ height: '100vh' }}>
-        <Home {...{ mode, toggleTheme }} />
+    <ThemeProvider theme={darkTheme}>
+      <Box bgcolor={'background.default'} color="text.primary">
+        <Navbar setMode={setMode} mode={mode} />
+        <Stack
+          direction="row"
+          spacing={{ xs: 0, sm: 2 }}
+          justifyContent="space-between"
+        >
+          <Sidebar setMode={setMode} mode={mode} />
+          <Home />
+          <Rightbar />
+        </Stack>
       </Box>
     </ThemeProvider>
   );
