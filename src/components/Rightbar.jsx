@@ -14,7 +14,7 @@ import imgData from './image-data';
 const Rightbar = () => {
   return (
     <Box
-      flex={2}
+      flex={1}
       p={2}
       sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}
     >

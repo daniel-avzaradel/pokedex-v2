@@ -7,6 +7,8 @@ import PersonIcon from '@mui/icons-material/Person';
 import SettingsIcon from '@mui/icons-material/Settings';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
+import Pokeball from '../assets/pokeball.png';
+import PikachuIcon from '../assets/pikachu-icon.png';
 
 import {
   List,
@@ -23,18 +25,18 @@ const SidebarList = ({ setMode, mode }) => {
       <ListItem disablePadding>
         <ListItemButton component="a" href="#home">
           <ListItemIcon>
-            <HomeIcon />
+            <img src={Pokeball} alt="Pokeball" width={26} />
           </ListItemIcon>
-          <ListItemText primary="Home page" />
+          <ListItemText primary="Home Page" />
         </ListItemButton>
       </ListItem>
 
       <ListItem disablePadding>
-        <ListItemButton component="a" href="#pages">
+        <ListItemButton component="a" href="#pokedex">
           <ListItemIcon>
-            <ArticleIcon />
+            <img src={PikachuIcon} alt="Pikachu Icon" width={26} />
           </ListItemIcon>
-          <ListItemText primary="Pages" />
+          <ListItemText primary="Pokedex Entries" />
         </ListItemButton>
       </ListItem>
 
@@ -90,6 +92,7 @@ const SidebarList = ({ setMode, mode }) => {
           </ListItemIcon>
           <Switch
             onChange={(e) => setMode(mode === 'light' ? 'dark' : 'light')}
+            checked={mode === 'dark' ? true : false}
           />
         </ListItemButton>
       </ListItem>

@@ -20,7 +20,11 @@ function App() {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <Box bgcolor={'background.default'} color="text.primary">
+      <Box
+        bgcolor={'background.default'}
+        color="text.primary"
+        sx={{ height: '100vh' }}
+      >
         <Navbar setMode={setMode} mode={mode} />
         <Stack
           direction="row"

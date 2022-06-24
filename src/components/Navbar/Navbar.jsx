@@ -45,7 +45,6 @@ const Search = styled('div')(({ theme }) => ({
   backgroundColor: 'white',
   padding: '0 10px',
   borderRadius: theme.shape.borderRadius,
-  width: '40%',
 }));
 
 const Icons = styled(Box)(({ theme }) => ({
@@ -194,7 +193,23 @@ const Navbar = ({ setMode, mode }) => {
           />
           <Typography variant="h6">POKEDEX v2.0</Typography>
         </Box>
-
+        <Box
+          sx={{
+            p: 0,
+            m: 0,
+            display: { xs: 'flex', sm: 'flex', md: 'none' },
+            alignItems: 'center',
+          }}
+        >
+          <img
+            src={Pokeball}
+            alt="Pokeball"
+            width={30}
+            style={{ marginRight: '10px' }}
+            className={classes.pokeball}
+            onClick={toggleDrawer('top', true)}
+          />
+        </Box>
         <Drawer
           anchor={'top'}
           open={state['top']}
@@ -203,7 +218,7 @@ const Navbar = ({ setMode, mode }) => {
           {list('top')}
         </Drawer>
         <Search>
-          <InputBase placeholder="Search..." />
+          <InputBase placeholder="Search..." sx={{ width: '400px' }} />
         </Search>
         <Icons>
           <Badge badgeContent={10} color="error">

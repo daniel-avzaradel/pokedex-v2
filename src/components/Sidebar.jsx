@@ -6,7 +6,7 @@ import { Box } from '@mui/material';
 const Sidebar = ({ setMode, mode }) => {
   return (
     <Box
-      flex={1.2}
+      flex={0.8}
       p={2}
       sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}
     >
