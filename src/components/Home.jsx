@@ -68,7 +68,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   justifyContent: 'flex-end',
 }));
 
-export default function Sidebar({ mode, toggleTheme }) {
+export default function Home({ mode, toggleTheme }) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
 
@@ -164,6 +164,7 @@ export default function Sidebar({ mode, toggleTheme }) {
         </List>
       </Drawer>
       <Main open={open}>
+        <DrawerHeader />
         <Typography variant="h5" my={2}>
           Pokedex Entries
         </Typography>
