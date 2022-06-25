@@ -4,10 +4,9 @@ import { Box, Typography } from '@mui/material';
 const Rightbar = () => {
   return (
     <Box
-      flex={2}
+      flex={1}
       p={2}
       sx={{
-        minWidth: { md: 180, lg: 200, xl: 400 },
         display: { xs: 'none', sm: 'none', md: 'block' },
       }}
     >
