@@ -36,16 +36,28 @@ export default function ActionAreaCard({ pokemon }) {
     water: '#56AEFF',
   };
 
+  console.log();
+
   return (
     <>
       {pokemonData ? (
         <Box className={classes.cardContainer}>
-          <Stack direction="column">
+          <Stack
+            direction="column"
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: '200px',
+            }}
+          >
             <Box
               sx={{
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
+                mixBlendMode: 'darken',
+                background: TYPE_COLORS[pokemonData.types[0].type.name],
               }}
               className={classes.imgBox}
             >
@@ -59,8 +71,7 @@ export default function ActionAreaCard({ pokemon }) {
                 {pokemonData.name[0].toUpperCase() +
                   pokemonData.name.substring(1)}
               </Typography>
-            </Box>
-            <Box className={classes.cardDesc}>
+
               <Typography paragraph variant="caption">
                 #
                 {pokemonData.id < 10
@@ -83,7 +94,7 @@ export default function ActionAreaCard({ pokemon }) {
                       sx={{ background: TYPE_COLORS[type.type.name] }}
                       className={classes.typeBtn}
                     >
-                      {type.type.name}
+                      {type.type.name.toUpperCase()}
                     </Box>
                   );
                 })}
