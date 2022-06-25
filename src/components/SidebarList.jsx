@@ -21,10 +21,19 @@ import {
 
 const SidebarList = ({ setMode, mode }) => {
   const iconWidth = 32;
+  const textColor = (mode) => {
+    return mode === 'dark' ? '#fff' : '#333';
+  };
   return (
     <List>
       <ListItem disablePadding>
-        <Link to="/">
+        <Link
+          to="/"
+          style={{
+            textDecoration: 'none',
+            color: textColor(mode),
+          }}
+        >
           <ListItemButton>
             <ListItemIcon>
               <img src={Pokeball} alt="Pokeball" width={iconWidth} />
@@ -35,7 +44,13 @@ const SidebarList = ({ setMode, mode }) => {
       </ListItem>
 
       <ListItem disablePadding>
-        <Link to="/pokedex">
+        <Link
+          to="/pokedex"
+          style={{
+            textDecoration: 'none',
+            color: textColor(mode),
+          }}
+        >
           <ListItemButton>
             <ListItemIcon>
               <img src={PikachuIcon} alt="Pikachu Icon" width={iconWidth} />
