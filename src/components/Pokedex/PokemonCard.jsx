@@ -15,6 +15,27 @@ export default function ActionAreaCard({ pokemon }) {
       .then((data) => setPokemonData(data));
   }, []);
 
+  const TYPE_COLORS = {
+    bug: '#C3D21F',
+    dark: '#8A6653',
+    dragon: '#8A76FF',
+    electric: '#FEE744',
+    fairy: '#FBAEFF',
+    fighting: '#A45544',
+    fire: '#FA5543',
+    flying: '#79A4FF',
+    ghost: '#7874D4',
+    grass: '#8DD851',
+    ground: '#ECCE5B',
+    ice: '#96F1FF',
+    normal: '#BAB9AD',
+    poison: '#A85CA0',
+    psychic: '#F965B2',
+    rock: '#CEBD72',
+    steel: '#C2C0D8',
+    water: '#56AEFF',
+  };
+
   return (
     <>
       {pokemonData ? (
@@ -26,13 +47,14 @@ export default function ActionAreaCard({ pokemon }) {
                 justifyContent: 'center',
                 alignItems: 'center',
               }}
+              className={classes.imgBox}
             >
               <img
                 src={pokemonData && pokemonData.sprites.front_default}
                 alt={pokemonData.name}
               />
             </Box>
-            <Box className={classes.cardTitle} px={2}>
+            <Box px={2} className={classes.cardTitle}>
               <Typography variant="h6">
                 {pokemonData.name[0].toUpperCase() +
                   pokemonData.name.substring(1)}
@@ -47,12 +69,22 @@ export default function ActionAreaCard({ pokemon }) {
                   ? '0' + pokemonData.id
                   : pokemonData.id}
               </Typography>
-              <Box>
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+              >
                 {pokemonData.types.map((type, i) => {
                   return (
-                    <Button key={i} className={classes.typeBtn}>
+                    <Box
+                      key={i}
+                      sx={{ background: TYPE_COLORS[type.type.name] }}
+                      className={classes.typeBtn}
+                    >
                       {type.type.name}
-                    </Button>
+                    </Box>
                   );
                 })}
               </Box>
