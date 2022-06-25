@@ -20,18 +20,17 @@ import {
   Switch,
 } from '@mui/material';
 
-import HomeIcon from '@mui/icons-material/Home';
-import ArticleIcon from '@mui/icons-material/Article';
-import PeopleIcon from '@mui/icons-material/People';
-import StorefrontIcon from '@mui/icons-material/Storefront';
-import PersonIcon from '@mui/icons-material/Person';
-import SettingsIcon from '@mui/icons-material/Settings';
-import AccountBoxIcon from '@mui/icons-material/AccountBox';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
-
 import EmailIcon from '@mui/icons-material/Email';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+
 import Pokeball from '../../assets/pokeball.png';
+import Pokeballs from '../../assets/pokeballs.png';
+import PikachuIcon from '../../assets/pikachu-icon.png';
+import ZubatIcon from '../../assets/zubat-icon.png';
+import Leaderboard from '../../assets/leaderboard.png';
+import Trainer from '../../assets/trainer.png';
+import Meowth from '../../assets/meowth.png';
+import Coin from '../../assets/coin.png';
 
 // styles
 import { useStyles } from './NarvbarStyles';
@@ -104,34 +103,43 @@ const Navbar = ({ setMode, mode }) => {
         <ListItem disablePadding>
           <ListItemButton component="a" href="#home">
             <ListItemIcon>
-              <HomeIcon />
+              <img src={Pokeball} alt="Pokeball" width={26} />
             </ListItemIcon>
-            <ListItemText primary="Home page" />
+            <ListItemText primary="Home Page" />
           </ListItemButton>
         </ListItem>
 
         <ListItem disablePadding>
-          <ListItemButton component="a" href="#pages">
+          <ListItemButton component="a" href="#pokedex">
             <ListItemIcon>
-              <ArticleIcon />
+              <img src={PikachuIcon} alt="Pikachu Icon" width={26} />
             </ListItemIcon>
-            <ListItemText primary="Pages" />
+            <ListItemText primary="Pokedex Entries" />
           </ListItemButton>
         </ListItem>
 
         <ListItem disablePadding>
-          <ListItemButton component="a" href="#groups">
+          <ListItemButton component="a" href="#myteams">
             <ListItemIcon>
-              <PeopleIcon />
+              <img src={Pokeballs} alt="My Teams" width={26} />
             </ListItemIcon>
-            <ListItemText primary="Groups" />
+            <ListItemText primary="My Teams" />
+          </ListItemButton>
+        </ListItem>
+
+        <ListItem disablePadding>
+          <ListItemButton component="a" href="#leaderboard">
+            <ListItemIcon>
+              <img src={Leaderboard} alt="Leaderboard" width={26} />
+            </ListItemIcon>
+            <ListItemText primary="Leaderboard" />
           </ListItemButton>
         </ListItem>
 
         <ListItem disablePadding>
           <ListItemButton component="a" href="#marketplace">
             <ListItemIcon>
-              <StorefrontIcon />
+              <img src={Coin} alt="Marketplace" width={26} />
             </ListItemIcon>
             <ListItemText primary="Marketplace" />
           </ListItemButton>
@@ -140,25 +148,16 @@ const Navbar = ({ setMode, mode }) => {
         <ListItem disablePadding>
           <ListItemButton component="a" href="#friends">
             <ListItemIcon>
-              <PersonIcon />
+              <img src={Meowth} alt="Friends" width={26} />
             </ListItemIcon>
             <ListItemText primary="Friends" />
           </ListItemButton>
         </ListItem>
 
         <ListItem disablePadding>
-          <ListItemButton component="a" href="#settings">
-            <ListItemIcon>
-              <SettingsIcon />
-            </ListItemIcon>
-            <ListItemText primary="Settings" />
-          </ListItemButton>
-        </ListItem>
-
-        <ListItem disablePadding>
           <ListItemButton component="a" href="#profile">
             <ListItemIcon>
-              <AccountBoxIcon />
+              <img src={Trainer} alt="Trainer" width={26} />
             </ListItemIcon>
             <ListItemText primary="Profile" />
           </ListItemButton>
@@ -167,11 +166,11 @@ const Navbar = ({ setMode, mode }) => {
         <ListItem disablePadding>
           <ListItemButton disableRipple>
             <ListItemIcon>
-              <DarkModeIcon />
+              <img src={ZubatIcon} alt="Zubat Icon" width={26} />
             </ListItemIcon>
             <Switch
-              checked={mode === 'dark' ? true : false}
               onChange={(e) => setMode(mode === 'light' ? 'dark' : 'light')}
+              checked={mode === 'dark' ? true : false}
             />
           </ListItemButton>
         </ListItem>
@@ -184,13 +183,6 @@ const Navbar = ({ setMode, mode }) => {
     <AppBar position="sticky">
       <StyledToolbar>
         <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex' } }}>
-          <img
-            src={Pokeball}
-            alt="Pokeball"
-            width={30}
-            style={{ marginRight: '10px' }}
-            className={classes.pokeball}
-          />
           <Typography variant="h6">POKEDEX v2.0</Typography>
         </Box>
         <Box

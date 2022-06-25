@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import { useStyles } from './HomeStyles';
 
 import Squirtle from '../assets/squirtle.png';
@@ -9,7 +9,7 @@ const Home = () => {
 
   return (
     <Box flex={2.6} p={2}>
-      <Box py={0} width={'80%'}>
+      <Box px={2}>
         <Typography variant="h5" color="primary" py={2}>
           Pokedex v2.0
         </Typography>
@@ -38,8 +38,11 @@ const Home = () => {
         <Typography paragraph variant="caption">
           Frontend Software Engineer
         </Typography>
-        <Box py={2} className={classes.backgroundImg}>
+        <Box py={4} sx={{ display: 'flex', alignItems: 'center' }}>
           <img src={Squirtle} alt="Squirtle" width={260} />
+          <Button variant="contained" sx={{ marginLeft: 4 }}>
+            POKEDEX ENTRIES
+          </Button>
         </Box>
       </Box>
     </Box>
