@@ -4,9 +4,9 @@ import App from './App';
 
 import Home from './components/Home';
 import Pokedex from './components/Pokedex/Pokedex';
-import Firstgen from './components/Pokedex/Firstgen/Firstgen';
-import Secondgen from './components/Pokedex/Secondgen/Secondgen';
-import Thirdgen from './components/Pokedex/Thirdgen/Thirdgen';
+import Firstgen from './components/Pokedex/Firstgen';
+import Secondgen from './components/Pokedex/Secondgen';
+import Thirdgen from './components/Pokedex/Thirdgen';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 

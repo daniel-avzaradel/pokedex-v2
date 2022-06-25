@@ -9,7 +9,7 @@ import { Box, Stack } from '@mui/material';
 
 const Layout = ({ mode, setMode }) => {
   return (
-    <Box bgcolor={'background.default'} color="text.primary" height={'100vh'}>
+    <Box bgcolor={'background.default'} color="text.primary">
       <Navbar {...{ mode, setMode }} />
       <Stack
         direction="row"

@@ -9,8 +9,7 @@ const Sidebar = ({ setMode, mode }) => {
       flex={1}
       p={2}
       sx={{
-        minWidth: 180,
-        maxWidth: { md: 220, lg: 280, xl: 340 },
+        minWidth: { md: 200, lg: 200, xl: 280 },
         display: { xs: 'none', sm: 'none', md: 'block' },
       }}
     >

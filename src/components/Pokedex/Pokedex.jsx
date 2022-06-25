@@ -1,23 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import GenCards from './GenCards';
 import PokedexIcon from '../../assets/pokedex.png';
 import { gendata } from './gendata';
 
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Grid, Stack, Typography } from '@mui/material';
 
 const Pokedex = () => {
-  const [pokedex, setPokedex] = useState(null);
-
-  useEffect(() => {
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
-      .then((response) => response.json())
-      .then((data) => setPokedex(data.results));
-  }, []);
-
-  console.log(pokedex);
-  console.log(gendata);
-
   return (
     <Box flex={6} p={4}>
       <Box display="flex" alignItems={'center'}>
@@ -56,10 +45,16 @@ const Pokedex = () => {
             xl: 'flex-start',
           }}
         >
-          {gendata &&
-            gendata.map((card) => {
-              return <GenCards key={card.name} gendata={card} />;
-            })}
+          <Grid container spacing={2}>
+            {gendata &&
+              gendata.map((card) => {
+                return (
+                  <Grid item xs={12} sm={6} md={6} lg={4} key={card.name}>
+                    <GenCards key={card.name} gendata={card} />
+                  </Grid>
+                );
+              })}
+          </Grid>
         </Stack>
       </Box>
     </Box>

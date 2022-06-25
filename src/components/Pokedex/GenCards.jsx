@@ -10,20 +10,19 @@ import {
 } from '@mui/material';
 
 export default function GenCards({ gendata }) {
+  const textColor = (mode) => (mode === 'dark' ? '#fff' : '#333');
+
   return (
     <Card
       sx={{
-        maxWidth: { xs: '90vw', sm: '40vw', md: 440, lg: 360 },
-        height: '400px',
-        mr: 2,
-        mb: 2,
+        minHeight: { sm: 'auto', md: 380, lg: 400, xl: 460 },
       }}
       elevation={2}
     >
       <CardActionArea>
         <Link
           to={`/pokedex/${gendata.name + 'gen'}`}
-          style={{ textDecoration: 'none' }}
+          style={{ textDecoration: 'none', color: textColor() }}
         >
           <CardMedia
             component="img"
@@ -32,7 +31,7 @@ export default function GenCards({ gendata }) {
             alt="green iguana"
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography gutterBottom variant="h5" component="div" color={'red'}>
               {gendata.title}
             </Typography>
             <Typography variant="body2" color="text.secondary">

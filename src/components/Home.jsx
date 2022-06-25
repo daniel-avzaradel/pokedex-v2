@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <Box flex={6} p={2}>
+    <Box flex={6} p={2} minHeight={'100vh'}>
       <Box px={4}>
         <Typography variant="h5" color="primary" py={2}>
           Pokedex v2.0
