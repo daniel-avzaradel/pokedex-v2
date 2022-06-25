@@ -14,11 +14,11 @@ import imgData from './image-data';
 const Rightbar = () => {
   return (
     <Box
-      flex={1}
+      flex={2}
       p={2}
       sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}
     >
-      <Box position="fixed" width={320}>
+      <Box position="fixed">
         <Typography variant="h6" fontWeight={100} mb={2}>
           Online Friends
         </Typography>
@@ -60,19 +60,6 @@ const Rightbar = () => {
         <Typography variant="h6" fontWeight={100} mt={2} mb={2}>
           Latest Photos
         </Typography>
-        <ImageList cols={3} rows={1} rowHeight={120} gap={5}>
-          {imgData.map((item) => (
-            <ImageListItem key={item.img}>
-              <img
-                src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-                srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                alt={item.title}
-                loading="lazy"
-              />
-            </ImageListItem>
-          ))}
-        </ImageList>
-        <Comments />
       </Box>
     </Box>
   );

@@ -11,10 +11,11 @@ export const gendata = {
   second: {
     title: 'Gen II',
     img: SecondGen,
-    desc: `Generation II introduced a new region to the Pokémon universe, Johto, located directly west of the Kanto region featured in Generation I. Johto's culture is notably more old-fashioned than Kanto's, especially in the more rural areas, which are more plentiful than in Kanto. Like Kanto, it has a sea to the south and mountains to the north.`,
+    desc: `The second generation of Pokémon games, referred to as the Gold & Silver series in Pokémon Crystal's box blurb and instruction manual, is a sequel to the Generation I games Red and Green, Blue, Red and Blue, and Yellow.`,
   },
   third: {
     title: 'Gen III',
     img: ThirdGen,
+    desc: `This generation's first games were Pokémon Ruby and Sapphire Version, followed by remakes of the original Generation I games Pokémon FireRed and LeafGreen Version and finally ended with a third version of Ruby and Sapphire, Pokémon Emerald Version.`,
   },
 };

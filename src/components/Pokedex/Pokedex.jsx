@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import GenCards from './GenCards';
+import PokedexIcon from '../../assets/pokedex.png';
 
 import { Box, Stack, Typography } from '@mui/material';
 
@@ -16,10 +17,23 @@ const Pokedex = () => {
   console.log(pokedex);
 
   return (
-    <Box flex={2.6} p={4}>
-      <Typography variant="h5">POKEDEX</Typography>
+    <Box flex={6} p={4}>
+      <Box display="flex" alignItems={'center'}>
+        <Box>
+          <img src={PokedexIcon} width="40" alt="Pokedex" />
+        </Box>
+        <Stack direction="column" justifyContent={'center'}>
+          <Typography variant="h5" lineHeight={1}>
+            POKEDEX ENTRIES
+          </Typography>
+          <Typography paragraph lineHeight={1} mb={0}>
+            Choose the generation
+          </Typography>
+        </Stack>
+      </Box>
+
       <Box py={4}>
-        <Stack direction={'row'}>
+        <Stack direction={'row'} flexWrap="wrap" justifyContent="flex-start">
           <GenCards gen="first" />
           <GenCards gen="second" />
           <GenCards gen="third" />

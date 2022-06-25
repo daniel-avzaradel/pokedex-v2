@@ -2,11 +2,12 @@ import React from 'react';
 import { Box, Button, Typography } from '@mui/material';
 
 import Squirtle from '../assets/squirtle.png';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <Box flex={2.6} p={2}>
-      <Box px={2}>
+    <Box flex={6} p={2}>
+      <Box px={4}>
         <Typography variant="h5" color="primary" py={2}>
           Pokedex v2.0
         </Typography>
@@ -37,9 +38,16 @@ const Home = () => {
         </Typography>
         <Box py={4} sx={{ display: 'flex', alignItems: 'center' }}>
           <img src={Squirtle} alt="Squirtle" width={260} />
-          <Button variant="contained" sx={{ marginLeft: 4 }}>
-            POKEDEX ENTRIES
-          </Button>
+          <Link
+            style={{
+              textDecoration: 'none',
+            }}
+            to="/pokedex"
+          >
+            <Button variant="contained" sx={{ marginLeft: 4 }}>
+              POKEDEX ENTRIES
+            </Button>
+          </Link>
         </Box>
       </Box>
     </Box>

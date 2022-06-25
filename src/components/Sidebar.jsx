@@ -6,9 +6,12 @@ import { Box } from '@mui/material';
 const Sidebar = ({ setMode, mode }) => {
   return (
     <Box
-      flex={0.8}
+      flex={1}
       p={2}
-      sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}
+      sx={{
+        minWidth: 180,
+        display: { xs: 'none', sm: 'none', md: 'block' },
+      }}
     >
       <Box position="fixed">
         <SidebarList setMode={setMode} mode={mode} />

@@ -21,9 +21,7 @@ import {
 
 const SidebarList = ({ setMode, mode }) => {
   const iconWidth = 32;
-  const textColor = (mode) => {
-    return mode === 'dark' ? '#fff' : '#333';
-  };
+  const textColor = (mode) => (mode === 'dark' ? '#fff' : '#333');
   return (
     <List>
       <ListItem disablePadding>
@@ -55,7 +53,7 @@ const SidebarList = ({ setMode, mode }) => {
             <ListItemIcon>
               <img src={PikachuIcon} alt="Pikachu Icon" width={iconWidth} />
             </ListItemIcon>
-            <ListItemText primary="Pokedex Entries" />
+            <ListItemText primary="Pokedex" />
           </ListItemButton>
         </Link>
       </ListItem>
