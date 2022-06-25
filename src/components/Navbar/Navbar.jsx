@@ -3,7 +3,6 @@ import {
   AppBar,
   Badge,
   Box,
-  InputBase,
   styled,
   Toolbar,
   Typography,
@@ -39,12 +38,6 @@ const StyledToolbar = styled(Toolbar)({
   display: 'flex',
   justifyContent: 'space-between',
 });
-
-const Search = styled('div')(({ theme }) => ({
-  backgroundColor: 'white',
-  padding: '0 10px',
-  borderRadius: theme.shape.borderRadius,
-}));
 
 const Icons = styled(Box)(({ theme }) => ({
   display: 'none',

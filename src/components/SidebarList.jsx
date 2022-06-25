@@ -20,13 +20,14 @@ import {
 } from '@mui/material';
 
 const SidebarList = ({ setMode, mode }) => {
+  const iconWidth = 32;
   return (
     <List>
       <ListItem disablePadding>
-        <Link to="/" style={{ color: '#333', textDecoration: 'none' }}>
+        <Link to="/">
           <ListItemButton>
             <ListItemIcon>
-              <img src={Pokeball} alt="Pokeball" width={26} />
+              <img src={Pokeball} alt="Pokeball" width={iconWidth} />
             </ListItemIcon>
             <ListItemText primary="Home Page" />
           </ListItemButton>
@@ -34,10 +35,10 @@ const SidebarList = ({ setMode, mode }) => {
       </ListItem>
 
       <ListItem disablePadding>
-        <Link to="/pokedex" style={{ color: '#333', textDecoration: 'none' }}>
+        <Link to="/pokedex">
           <ListItemButton>
             <ListItemIcon>
-              <img src={PikachuIcon} alt="Pikachu Icon" width={26} />
+              <img src={PikachuIcon} alt="Pikachu Icon" width={iconWidth} />
             </ListItemIcon>
             <ListItemText primary="Pokedex Entries" />
           </ListItemButton>
@@ -47,7 +48,7 @@ const SidebarList = ({ setMode, mode }) => {
       <ListItem disablePadding>
         <ListItemButton component="a" href="#myteams">
           <ListItemIcon>
-            <img src={Pokeballs} alt="My Teams" width={26} />
+            <img src={Pokeballs} alt="My Teams" width={iconWidth} />
           </ListItemIcon>
           <ListItemText primary="My Teams" />
         </ListItemButton>
@@ -56,7 +57,7 @@ const SidebarList = ({ setMode, mode }) => {
       <ListItem disablePadding>
         <ListItemButton component="a" href="#leaderboard">
           <ListItemIcon>
-            <img src={Leaderboard} alt="Leaderboard" width={26} />
+            <img src={Leaderboard} alt="Leaderboard" width={iconWidth} />
           </ListItemIcon>
           <ListItemText primary="Leaderboard" />
         </ListItemButton>
@@ -65,7 +66,7 @@ const SidebarList = ({ setMode, mode }) => {
       <ListItem disablePadding>
         <ListItemButton component="a" href="#marketplace">
           <ListItemIcon>
-            <img src={Coin} alt="Marketplace" width={26} />
+            <img src={Coin} alt="Marketplace" width={iconWidth} />
           </ListItemIcon>
           <ListItemText primary="Marketplace" />
         </ListItemButton>
@@ -74,7 +75,7 @@ const SidebarList = ({ setMode, mode }) => {
       <ListItem disablePadding>
         <ListItemButton component="a" href="#friends">
           <ListItemIcon>
-            <img src={Meowth} alt="Friends" width={26} />
+            <img src={Meowth} alt="Friends" width={iconWidth} />
           </ListItemIcon>
           <ListItemText primary="Friends" />
         </ListItemButton>
@@ -83,7 +84,7 @@ const SidebarList = ({ setMode, mode }) => {
       <ListItem disablePadding>
         <ListItemButton component="a" href="#profile">
           <ListItemIcon>
-            <img src={Trainer} alt="Trainer" width={26} />
+            <img src={Trainer} alt="Trainer" width={iconWidth} />
           </ListItemIcon>
           <ListItemText primary="Profile" />
         </ListItemButton>
@@ -92,7 +93,7 @@ const SidebarList = ({ setMode, mode }) => {
       <ListItem disablePadding>
         <ListItemButton disableRipple>
           <ListItemIcon>
-            <img src={ZubatIcon} alt="Zubat Icon" width={26} />
+            <img src={ZubatIcon} alt="Zubat Icon" width={iconWidth} />
           </ListItemIcon>
           <Switch
             onChange={(e) => setMode(mode === 'light' ? 'dark' : 'light')}

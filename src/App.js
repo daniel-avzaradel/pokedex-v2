@@ -1,10 +1,7 @@
 import React from 'react';
-import Navbar from './components/Navbar/Navbar';
-import Home from './components/Home';
-import Sidebar from './components/Sidebar';
-import Rightbar from './components/Rightbar';
+import Layout from './components/Layout';
 
-import { Box, createTheme, Stack, ThemeProvider } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material';
 
 function App() {
   const [mode, setMode] = React.useState('light');
@@ -20,23 +17,7 @@ function App() {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <Box
-        bgcolor={'background.default'}
-        color="text.primary"
-        sx={{ height: '100vh' }}
-      >
-        <Navbar setMode={setMode} mode={mode} />
-        <Stack
-          direction="row"
-          spacing={{ xs: 0, sm: 2 }}
-          justifyContent="space-between"
-        >
-          <Sidebar setMode={setMode} mode={mode} />
-
-          <Home />
-          <Rightbar />
-        </Stack>
-      </Box>
+      <Layout {...{ mode, setMode }} />
     </ThemeProvider>
   );
 }

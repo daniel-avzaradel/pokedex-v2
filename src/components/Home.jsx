@@ -1,12 +1,9 @@
 import React from 'react';
 import { Box, Button, Typography } from '@mui/material';
-import { useStyles } from './HomeStyles';
 
 import Squirtle from '../assets/squirtle.png';
 
 const Home = () => {
-  const classes = useStyles();
-
   return (
     <Box flex={2.6} p={2}>
       <Box px={2}>

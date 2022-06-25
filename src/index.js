@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+
 import Home from './components/Home';
 import Pokedex from './components/Pokedex/Pokedex';
 
@@ -13,7 +14,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
-          <Route path="pokedex" element={<Pokedex />} />
+          <Route path="/pokedex" element={<Pokedex />} />
         </Route>
       </Routes>
     </BrowserRouter>
