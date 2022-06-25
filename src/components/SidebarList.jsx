@@ -1,9 +1,5 @@
 import React from 'react';
-import PeopleIcon from '@mui/icons-material/People';
-import StorefrontIcon from '@mui/icons-material/Storefront';
-import PersonIcon from '@mui/icons-material/Person';
-import SettingsIcon from '@mui/icons-material/Settings';
-import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import { Link } from 'react-router-dom';
 
 import Pokeball from '../assets/pokeball.png';
 import Pokeballs from '../assets/pokeballs.png';
@@ -27,21 +23,25 @@ const SidebarList = ({ setMode, mode }) => {
   return (
     <List>
       <ListItem disablePadding>
-        <ListItemButton component="a" href="#home">
-          <ListItemIcon>
-            <img src={Pokeball} alt="Pokeball" width={26} />
-          </ListItemIcon>
-          <ListItemText primary="Home Page" />
-        </ListItemButton>
+        <Link to="/" style={{ color: '#333', textDecoration: 'none' }}>
+          <ListItemButton>
+            <ListItemIcon>
+              <img src={Pokeball} alt="Pokeball" width={26} />
+            </ListItemIcon>
+            <ListItemText primary="Home Page" />
+          </ListItemButton>
+        </Link>
       </ListItem>
 
       <ListItem disablePadding>
-        <ListItemButton component="a" href="#pokedex">
-          <ListItemIcon>
-            <img src={PikachuIcon} alt="Pikachu Icon" width={26} />
-          </ListItemIcon>
-          <ListItemText primary="Pokedex Entries" />
-        </ListItemButton>
+        <Link to="/pokedex" style={{ color: '#333', textDecoration: 'none' }}>
+          <ListItemButton>
+            <ListItemIcon>
+              <img src={PikachuIcon} alt="Pikachu Icon" width={26} />
+            </ListItemIcon>
+            <ListItemText primary="Pokedex Entries" />
+          </ListItemButton>
+        </Link>
       </ListItem>
 
       <ListItem disablePadding>

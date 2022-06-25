@@ -32,6 +32,7 @@ function App() {
           justifyContent="space-between"
         >
           <Sidebar setMode={setMode} mode={mode} />
+
           <Home />
           <Rightbar />
         </Stack>
