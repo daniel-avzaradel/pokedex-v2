@@ -26,14 +26,34 @@ const Pokedex = () => {
           <Typography variant="h5" lineHeight={1}>
             POKEDEX ENTRIES
           </Typography>
-          <Typography paragraph lineHeight={1} mb={0}>
-            Choose the generation
-          </Typography>
         </Stack>
       </Box>
 
-      <Box py={4}>
-        <Stack direction={'row'} flexWrap="wrap" justifyContent="flex-start">
+      <Box
+        my={2}
+        justifyContent={{
+          xs: 'center',
+          sm: 'center',
+          md: 'center',
+          lg: 'flex-start',
+        }}
+      >
+        <Typography paragraph lineHeight={1} mb={0}>
+          Choose the generation
+        </Typography>
+      </Box>
+
+      <Box pb={4}>
+        <Stack
+          direction={'row'}
+          flexWrap="wrap"
+          justifyContent={{
+            xs: 'center',
+            sm: 'center',
+            md: 'center',
+            xl: 'flex-start',
+          }}
+        >
           <GenCards gen="first" />
           <GenCards gen="second" />
           <GenCards gen="third" />

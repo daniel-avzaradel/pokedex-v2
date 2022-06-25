@@ -9,11 +9,18 @@ import { gendata } from './gendata';
 
 export default function GenCards({ gen }) {
   return (
-    <Card sx={{ maxWidth: 360, mr: 2, mb: 2 }} elevation={2}>
+    <Card
+      sx={{
+        maxWidth: { xs: '90vw', sm: '40vw', md: 440, lg: 360 },
+        mr: 2,
+        mb: 2,
+      }}
+      elevation={2}
+    >
       <CardActionArea>
         <CardMedia
           component="img"
-          height="180px"
+          height="auto"
           image={gendata[gen].img}
           alt="green iguana"
         />
