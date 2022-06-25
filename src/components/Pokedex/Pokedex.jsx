@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import GenCards from './GenCards';
 import PokedexIcon from '../../assets/pokedex.png';
+import { gendata } from './gendata';
 
 import { Box, Stack, Typography } from '@mui/material';
 
@@ -15,6 +16,7 @@ const Pokedex = () => {
   }, []);
 
   console.log(pokedex);
+  console.log(gendata);
 
   return (
     <Box flex={6} p={4}>
@@ -50,13 +52,14 @@ const Pokedex = () => {
           justifyContent={{
             xs: 'center',
             sm: 'center',
-            md: 'center',
+            md: 'flex-start',
             xl: 'flex-start',
           }}
         >
-          <GenCards gen="first" />
-          <GenCards gen="second" />
-          <GenCards gen="third" />
+          {gendata &&
+            gendata.map((card) => {
+              return <GenCards key={card.name} gendata={card} />;
+            })}
         </Stack>
       </Box>
     </Box>

@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Pokeball from '../assets/pokeball.png';
-import Pokeballs from '../assets/pokeballs.png';
-import PikachuIcon from '../assets/pikachu-icon.png';
-import ZubatIcon from '../assets/zubat-icon.png';
-import Leaderboard from '../assets/leaderboard.png';
-import Trainer from '../assets/trainer.png';
-import Meowth from '../assets/meowth.png';
-import Coin from '../assets/coin.png';
+import Pokeball from '../../assets/pokeball.png';
+import Pokeballs from '../../assets/pokeballs.png';
+import PikachuIcon from '../../assets/pikachu-icon.png';
+import ZubatIcon from '../../assets/zubat-icon.png';
+import Leaderboard from '../../assets/leaderboard.png';
+import Trainer from '../../assets/trainer.png';
+import Meowth from '../../assets/meowth.png';
+import Coin from '../../assets/coin.png';
 
 import {
   List,

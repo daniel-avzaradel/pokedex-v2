@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Navbar from './Navbar/Navbar';
-import Sidebar from './Sidebar';
+import Sidebar from './Sidebar/Sidebar';
 import Rightbar from './Rightbar';
 import { Outlet } from 'react-router-dom';
 

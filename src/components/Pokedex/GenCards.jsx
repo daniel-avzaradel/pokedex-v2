@@ -1,37 +1,45 @@
 import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
-import { gendata } from './gendata';
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+  CardActionArea,
+} from '@mui/material';
 
-export default function GenCards({ gen }) {
+export default function GenCards({ gendata }) {
   return (
     <Card
       sx={{
         maxWidth: { xs: '90vw', sm: '40vw', md: 440, lg: 360 },
+        height: '400px',
         mr: 2,
         mb: 2,
       }}
       elevation={2}
     >
       <CardActionArea>
-        <CardMedia
-          component="img"
-          height="auto"
-          image={gendata[gen].img}
-          alt="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {gendata[gen].title}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {gendata[gen].desc}
-          </Typography>
-        </CardContent>
+        <Link
+          to={`/pokedex/${gendata.name + 'gen'}`}
+          style={{ textDecoration: 'none' }}
+        >
+          <CardMedia
+            component="img"
+            height="auto"
+            image={gendata.img}
+            alt="green iguana"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              {gendata.title}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {gendata.desc}
+            </Typography>
+          </CardContent>
+        </Link>
       </CardActionArea>
     </Card>
   );

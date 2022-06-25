@@ -4,6 +4,9 @@ import App from './App';
 
 import Home from './components/Home';
 import Pokedex from './components/Pokedex/Pokedex';
+import Firstgen from './components/Pokedex/Firstgen/Firstgen';
+import Secondgen from './components/Pokedex/Secondgen/Secondgen';
+import Thirdgen from './components/Pokedex/Thirdgen/Thirdgen';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -14,7 +17,12 @@ root.render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
-          <Route path="/pokedex" element={<Pokedex />} />
+          <Route path="/pokedex">
+            <Route index={true} element={<Pokedex />} />
+            <Route path="firstgen" element={<Firstgen />} />
+            <Route path="secondgen" element={<Secondgen />} />
+            <Route path="/pokedex/thirdgen" element={<Thirdgen />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

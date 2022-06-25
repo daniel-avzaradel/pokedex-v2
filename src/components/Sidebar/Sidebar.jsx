@@ -10,6 +10,7 @@ const Sidebar = ({ setMode, mode }) => {
       p={2}
       sx={{
         minWidth: 180,
+        maxWidth: { md: 220, lg: 280, xl: 340 },
         display: { xs: 'none', sm: 'none', md: 'block' },
       }}
     >

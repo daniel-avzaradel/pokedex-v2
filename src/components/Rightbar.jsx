@@ -1,15 +1,5 @@
 import React from 'react';
-import Comments from './Comments';
-import {
-  Avatar,
-  AvatarGroup,
-  Box,
-  ImageList,
-  ImageListItem,
-  Typography,
-} from '@mui/material';
-
-import imgData from './image-data';
+import { Avatar, AvatarGroup, Box, Typography } from '@mui/material';
 
 const Rightbar = () => {
   return (
