@@ -209,9 +209,6 @@ const Navbar = ({ setMode, mode }) => {
         >
           {list('top')}
         </Drawer>
-        <Search>
-          <InputBase placeholder="Search..." sx={{ width: '400px' }} />
-        </Search>
         <Icons>
           <Badge badgeContent={10} color="error">
             <EmailIcon />
