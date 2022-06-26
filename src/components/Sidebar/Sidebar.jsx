@@ -9,11 +9,11 @@ const Sidebar = ({ setMode, mode }) => {
       flex={1}
       p={2}
       sx={{
-        minWidth: { md: 200, lg: 200, xl: 280 },
+        minWidth: { md: 200, lg: 200, xl: 240 },
         display: { xs: 'none', sm: 'none', md: 'block' },
       }}
     >
-      <Box position="fixed">
+      <Box position='fixed'>
         <SidebarList setMode={setMode} mode={mode} />
       </Box>
     </Box>

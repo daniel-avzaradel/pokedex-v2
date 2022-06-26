@@ -13,12 +13,12 @@ const Firstgen = () => {
   }, []);
 
   return (
-    <Box p={4} flex={6}>
-      <Typography variant='h5' px={1}>
+    <Box p={{ xs: '4px', sm: 4 }} flex={6}>
+      <Typography variant='h5' px={1} pt={{ xs: 2, md: 0 }}>
         GEN I: #001 - #151
       </Typography>
       <br />
-      <Box sx={{ flexGrow: 1, display: 'flex', flexWrap: 'wrap' }}>
+      <Box sx={{ flexGrow: 1, display: 'flex', flexWrap: 'wrap', justifyContent: { xs: 'center', md: 'flex-start' } }}>
         {pokedex ? (
           pokedex.map((pokemon) => {
             return (
