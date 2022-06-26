@@ -1,6 +1,6 @@
 import { createStyles, makeStyles } from '@mui/styles';
 
-const boxWidth = 220;
+const boxWidth = 180;
 export const useStyles = makeStyles(() =>
   createStyles({
     cardContainer: {
@@ -11,7 +11,7 @@ export const useStyles = makeStyles(() =>
       color: '#111',
       borderRadius: 10,
       width: boxWidth,
-      height: 260,
+      height: 220,
       cursor: 'pointer',
       transition: '0.1s ease-in-out',
       '&:hover': {
@@ -25,8 +25,8 @@ export const useStyles = makeStyles(() =>
       alignItems: 'center',
       backgroundColor: 'rgba(0,0,0,0.7)',
       backgroundBlendMode: 'overlay',
-      width: '180px',
-      height: '100px',
+      width: '150px',
+      height: '60px',
       border: '3px solid goldenrod',
       borderRadius: 4,
       zIndex: 3,
@@ -41,6 +41,7 @@ export const useStyles = makeStyles(() =>
       border: '2px solid #666',
       borderRadius: 6,
       margin: 0,
+      height: '80px',
     },
     cardDesc: {
       textAlign: 'center',
@@ -50,8 +51,8 @@ export const useStyles = makeStyles(() =>
     typeBtn: {
       display: 'flex',
       justifyContent: 'center',
-      margin: '0 4px',
-      padding: '2px 12px',
+      margin: '0 2px',
+      padding: '1px 6px',
       borderRadius: 10,
     },
   }),

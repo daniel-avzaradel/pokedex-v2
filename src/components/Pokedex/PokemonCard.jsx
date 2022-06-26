@@ -16,6 +16,8 @@ export default function ActionAreaCard({ pokemon }) {
       .then((data) => setPokemonData(data));
   }, []);
 
+  const star = () => <StarIcon sx={{ width: 20, color: 'goldenrod', stroke: 'black' }} />;
+
   const TYPE_COLORS = {
     bug: '#C3D21F',
     dark: '#8A6653',
@@ -54,20 +56,19 @@ export default function ActionAreaCard({ pokemon }) {
             backgroundBlendMode: 'darken',
           }}
         >
-          <Stack direction='column' sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <Box className={classes.imgBox}>
+          <Stack position={'relative'} direction='column'>
+            <Box className={classes.imgBox} sx={{ height: '80px', mt: 2 }}>
               <img
                 src={pokemonData && pokemonData.sprites.other['official-artwork'].front_default}
                 alt={pokemonData.name}
-                style={{ width: 100 }}
+                style={{ width: 70 }}
               />
             </Box>
-            <Box px={2} className={classes.cardTitle} my={1} sx={{ width: 150 }}>
-              <Typography variant='body2' fontWeight={500} mt={1}>
+            <Box px={2} className={classes.cardTitle} mt={1} sx={{ width: 120 }}>
+              <Typography variant='body2' fontWeight={500}>
                 {pokemonData.name[0].toUpperCase() + pokemonData.name.substring(1)}
                 {''} #{pokemonData.id < 10 ? '00' + pokemonData.id : pokemonData.id < 100 ? '0' + pokemonData.id : pokemonData.id}
               </Typography>
-              <Typography paragraph variant='caption' m={0}></Typography>
               <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 {pokemonData.types.map((type, i) => {
                   return (
@@ -85,20 +86,19 @@ export default function ActionAreaCard({ pokemon }) {
                 })}
               </Box>
               <Typography paragraph variant='caption'>
-                Total Base Stats: {totalPower(pokemonData)}
+                Base Stats: {totalPower(pokemonData)}
               </Typography>
             </Box>
             <Box display={'flex'} justifyContent='flex-end' m={0} width='100%'>
-              {totalPower(pokemonData) >= 500
-                ? Array(5).fill(
-                    <StarIcon
-                      sx={{
-                        color:
-                          'linear-gradient(138deg, rgba(103,81,0,1) 0%, rgba(244,203,17,1) 28%, rgba(154,120,18,1) 56%, rgba(244,203,17,1) 85%)',
-                      }}
-                    />,
-                  )
-                : ''}
+              {totalPower(pokemonData) >= 580
+                ? Array(5).fill(star())
+                : totalPower(pokemonData) >= 500
+                ? Array(4).fill(star())
+                : totalPower(pokemonData) >= 420
+                ? Array(3).fill(star())
+                : totalPower(pokemonData) >= 360
+                ? Array(2).fill(star())
+                : star()}
             </Box>
           </Stack>
         </Box>
