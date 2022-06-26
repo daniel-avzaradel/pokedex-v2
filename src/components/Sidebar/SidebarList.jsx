@@ -10,23 +10,16 @@ import Trainer from '../../assets/trainer.png';
 import Meowth from '../../assets/meowth.png';
 import Coin from '../../assets/coin.png';
 
-import {
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-  Switch,
-} from '@mui/material';
+import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Switch, Typography } from '@mui/material';
 
 const SidebarList = ({ setMode, mode }) => {
-  const iconWidth = 32;
+  const iconWidth = 26;
   const textColor = (mode) => (mode === 'dark' ? '#fff' : '#333');
   return (
     <List>
       <ListItem disablePadding>
         <Link
-          to="/"
+          to='/'
           style={{
             textDecoration: 'none',
             color: textColor(mode),
@@ -34,16 +27,16 @@ const SidebarList = ({ setMode, mode }) => {
         >
           <ListItemButton>
             <ListItemIcon>
-              <img src={Pokeball} alt="Pokeball" width={iconWidth} />
+              <img src={Pokeball} alt='Pokeball' width={iconWidth} />
             </ListItemIcon>
-            <ListItemText primary="Home Page" />
+            <Typography variant='body2'>Home Page</Typography>
           </ListItemButton>
         </Link>
       </ListItem>
 
       <ListItem disablePadding>
         <Link
-          to="/pokedex"
+          to='/pokedex'
           style={{
             textDecoration: 'none',
             color: textColor(mode),
@@ -51,67 +44,64 @@ const SidebarList = ({ setMode, mode }) => {
         >
           <ListItemButton>
             <ListItemIcon>
-              <img src={PikachuIcon} alt="Pikachu Icon" width={iconWidth} />
+              <img src={PikachuIcon} alt='Pikachu Icon' width={iconWidth} />
             </ListItemIcon>
-            <ListItemText primary="Pokedex" />
+            <Typography variant='body2'>Pokedex</Typography>
           </ListItemButton>
         </Link>
       </ListItem>
 
       <ListItem disablePadding>
-        <ListItemButton component="a" href="#myteams">
+        <ListItemButton component='a' href='#myteams'>
           <ListItemIcon>
-            <img src={Pokeballs} alt="My Teams" width={iconWidth} />
+            <img src={Pokeballs} alt='My Teams' width={iconWidth} />
           </ListItemIcon>
-          <ListItemText primary="My Teams" />
+          <Typography variant='body2'>My Teams</Typography>
         </ListItemButton>
       </ListItem>
 
       <ListItem disablePadding>
-        <ListItemButton component="a" href="#leaderboard">
+        <ListItemButton component='a' href='#leaderboard'>
           <ListItemIcon>
-            <img src={Leaderboard} alt="Leaderboard" width={iconWidth} />
+            <img src={Leaderboard} alt='Leaderboard' width={iconWidth} />
           </ListItemIcon>
-          <ListItemText primary="Leaderboard" />
+          <Typography variant='body2'>Leaderboard</Typography>
         </ListItemButton>
       </ListItem>
 
       <ListItem disablePadding>
-        <ListItemButton component="a" href="#marketplace">
+        <ListItemButton component='a' href='#marketplace'>
           <ListItemIcon>
-            <img src={Coin} alt="Marketplace" width={iconWidth} />
+            <img src={Coin} alt='Marketplace' width={iconWidth} />
           </ListItemIcon>
-          <ListItemText primary="Marketplace" />
+          <Typography variant='body2'>Marketplace</Typography>
         </ListItemButton>
       </ListItem>
 
       <ListItem disablePadding>
-        <ListItemButton component="a" href="#friends">
+        <ListItemButton component='a' href='#friends'>
           <ListItemIcon>
-            <img src={Meowth} alt="Friends" width={iconWidth} />
+            <img src={Meowth} alt='Friends' width={iconWidth} />
           </ListItemIcon>
-          <ListItemText primary="Friends" />
+          <Typography variant='body2'>Friends</Typography>
         </ListItemButton>
       </ListItem>
 
       <ListItem disablePadding>
-        <ListItemButton component="a" href="#profile">
+        <ListItemButton component='a' href='#profile'>
           <ListItemIcon>
-            <img src={Trainer} alt="Trainer" width={iconWidth} />
+            <img src={Trainer} alt='Trainer' width={iconWidth} />
           </ListItemIcon>
-          <ListItemText primary="Profile" />
+          <Typography variant='body2'>Profile</Typography>
         </ListItemButton>
       </ListItem>
 
       <ListItem disablePadding>
         <ListItemButton disableRipple>
           <ListItemIcon>
-            <img src={ZubatIcon} alt="Zubat Icon" width={iconWidth} />
+            <img src={ZubatIcon} alt='Zubat Icon' width={iconWidth} />
           </ListItemIcon>
-          <Switch
-            onChange={(e) => setMode(mode === 'light' ? 'dark' : 'light')}
-            checked={mode === 'dark' ? true : false}
-          />
+          <Switch onChange={(e) => setMode(mode === 'light' ? 'dark' : 'light')} checked={mode === 'dark' ? true : false} />
         </ListItemButton>
       </ListItem>
     </List>

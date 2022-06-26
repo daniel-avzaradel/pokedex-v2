@@ -1,40 +1,46 @@
 import { createStyles, makeStyles } from '@mui/styles';
 
+const boxWidth = 220;
 export const useStyles = makeStyles(() =>
   createStyles({
     cardContainer: {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      border: '2px solid #333',
+      border: '6px solid goldenrod',
       color: '#111',
       borderRadius: 10,
-      width: 240,
-      height: 280,
+      width: boxWidth,
+      height: 260,
       cursor: 'pointer',
       transition: '0.1s ease-in-out',
-      background:
-        'linear-gradient(127deg, rgba(144,144,144,1) 0%, rgba(255,255,255,1) 25%, rgba(204,204,204,1) 50%, rgba(255,255,255,1) 75%, rgba(179,179,179,1) 100%)',
       '&:hover': {
         opacity: 1,
         transform: 'scale(1.05)',
       },
     },
     imgBox: {
-      background: '#f6f6f6',
-      border: '1px solid black',
-      width: '200px',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: 'rgba(0,0,0,0.7)',
+      backgroundBlendMode: 'overlay',
+      width: '180px',
       height: '100px',
+      border: '3px solid goldenrod',
       borderRadius: 4,
+      zIndex: 3,
     },
     cardTitle: {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
       textAlign: 'center',
-      background: '#f6f6f6',
-      border: '1px solid #333',
-      width: '170px',
+      background: 'rgba(240, 240, 240, 0.8)',
+      border: '2px solid #666',
       borderRadius: 6,
-      margin: 2,
-      padding: '20px',
+      margin: 0,
     },
     cardDesc: {
       textAlign: 'center',
@@ -44,10 +50,9 @@ export const useStyles = makeStyles(() =>
     typeBtn: {
       display: 'flex',
       justifyContent: 'center',
-      padding: '4px 12px',
-      margin: '0 2px',
-      borderRadius: 4,
-      border: '1px solid #333',
+      margin: '0 4px',
+      padding: '2px 12px',
+      borderRadius: 10,
     },
-  })
+  }),
 );

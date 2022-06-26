@@ -19,6 +19,6 @@ export const gendata = [
     name: 'third',
     title: 'Gen III',
     img: ThirdGen,
-    desc: `This generation's first games were Pokémon Ruby and Sapphire Version, followed by remakes of the original Generation I games Pokémon FireRed and LeafGreen Version and finally ended with a third version of Ruby and Sapphire, Pokémon Emerald Version.`,
+    desc: `This generation's first games were Ruby and Sapphire Version, followed by remakes of the original Gen I games FireRed and LeafGreen and finally ended with a third version of Ruby and Sapphire, Pokémon Emerald Version.`,
   },
 ];

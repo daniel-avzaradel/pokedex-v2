@@ -14,7 +14,7 @@ const Firstgen = () => {
 
   return (
     <Box p={4} flex={6}>
-      <Typography variant="h5">GEN I:</Typography>
+      <Typography variant='h5'>GEN I:</Typography>
       <Typography paragraph>#001 - #151</Typography>
       <Box sx={{ flexGrow: 1, display: 'flex', flexWrap: 'wrap' }}>
         {pokedex ? (
@@ -26,7 +26,7 @@ const Firstgen = () => {
             );
           })
         ) : (
-          <LinearProgress color="primary" />
+          <LinearProgress color='primary' />
         )}
       </Box>
     </Box>
