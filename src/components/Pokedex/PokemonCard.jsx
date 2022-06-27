@@ -16,7 +16,7 @@ export default function ActionAreaCard({ pokemon }) {
       .then((data) => setPokemonData(data));
   }, []);
 
-  const star = () => <StarIcon sx={{ width: 20, color: 'goldenrod', stroke: 'black' }} />;
+  const star = () => <StarIcon sx={{ width: 20, color: 'goldenrod', strokeWidth: 2, stroke: 'black' }} />;
 
   const TYPE_COLORS = {
     bug: '#C3D21F',
@@ -45,7 +45,7 @@ export default function ActionAreaCard({ pokemon }) {
     return sum;
   };
 
-  const foil = 'https://as2.ftcdn.net/v2/jpg/02/02/19/91/500_F_202199151_uUp8bXB2VwCHLA9oEVn3xx3v0UpPmfgW.jpg';
+  const foil = `https://66.media.tumblr.com/bdca2e7a23acbfa0ca72af1ebff0b3d5/tumblr_pn2353aM1Y1uqkuw9o1_540.gif`;
   const normal = `url("data:image/svg+xml,%3Csvg width='16' height='20' viewBox='0 0 16 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23a4a4a4' fill-opacity='0.42' fill-rule='evenodd'%3E%3Cpath d='M8 0v20L0 10M16 0v10L8 0M16 10v10H8'/%3E%3C/g%3E%3C/svg%3E")`;
 
   return (
@@ -56,8 +56,9 @@ export default function ActionAreaCard({ pokemon }) {
           sx={{
             background: TYPE_COLORS[pokemonData.types[0].type.name],
             // backgroundImage: `url("data:image/svg+xml,%3Csvg width='16' height='20' viewBox='0 0 16 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23a4a4a4' fill-opacity='0.42' fill-rule='evenodd'%3E%3Cpath d='M8 0v20L0 10M16 0v10L8 0M16 10v10H8'/%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundImage: totalPower(pokemonData) >= 580 ? `url(${foil})` : normal,
-            backgroundBlendMode: totalPower(pokemonData) >= 580 ? 'overlay' : 'darken',
+            backgroundImage: normal,
+            backgroundBlendMode: totalPower(pokemonData) >= 580 ? 'difference' : 'darken',
+            backgroundPosition: 'center',
           }}
         >
           <Stack position={'relative'} direction='column'>
@@ -69,8 +70,8 @@ export default function ActionAreaCard({ pokemon }) {
               />
             </Box>
             <Box px={2} className={classes.cardTitle} mt={1} sx={{ width: 120 }}>
-              <Typography variant='body2' fontWeight={500}>
-                {pokemonData.name[0].toUpperCase() + pokemonData.name.substring(1)}
+              <Typography variant='body2' fontSize={'0.8rem'} fontWeight={500} mt={1}>
+                {pokemonData.name.toUpperCase()}
                 {''} #{pokemonData.id < 10 ? '00' + pokemonData.id : pokemonData.id < 100 ? '0' + pokemonData.id : pokemonData.id}
               </Typography>
               <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -82,14 +83,14 @@ export default function ActionAreaCard({ pokemon }) {
                       variant='caption'
                       className={classes.typeBtn}
                       m={'4px'}
-                      sx={{ background: TYPE_COLORS[type.type.name], fontSize: '0.7rem' }}
+                      sx={{ background: TYPE_COLORS[type.type.name], fontSize: '0.6rem' }}
                     >
                       {type.type.name.toUpperCase()}
                     </Typography>
                   );
                 })}
               </Box>
-              <Typography paragraph variant='caption'>
+              <Typography paragraph variant='caption' fontSize={'0.7rem'}>
                 Base Stats: {totalPower(pokemonData)}
               </Typography>
             </Box>
