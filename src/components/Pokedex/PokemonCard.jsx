@@ -70,7 +70,7 @@ export default function ActionAreaCard({ pokemon }) {
               />
             </Box>
             <Box px={2} className={classes.cardTitle} mt={1} sx={{ width: 120 }}>
-              <Typography variant='body2' fontSize={'0.8rem'} fontWeight={500} mt={1}>
+              <Typography variant='body2' fontSize={'0.75rem'} fontWeight={500} mt={1}>
                 {pokemonData.name.toUpperCase()}
                 {''} #{pokemonData.id < 10 ? '00' + pokemonData.id : pokemonData.id < 100 ? '0' + pokemonData.id : pokemonData.id}
               </Typography>
