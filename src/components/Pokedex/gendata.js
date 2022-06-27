@@ -7,7 +7,7 @@ export const gendata = [
     name: 'first',
     title: 'Gen I',
     img: FirstGen,
-    desc: 'Gen 1 encompasses the original 151 Pokémon from the Kanto region, which was the first region Pokémon fans ever visited in the Pokémon universe through Pokémon Red, Blue, Green and Yellow.',
+    desc: 'The first generation encompasses the original 151 Pokémon from the Kanto region, which was the first region Pokémon fans ever visited in the Pokémon universe through Pokémon Red, Blue, Green and Yellow.',
   },
   {
     name: 'second',
@@ -19,6 +19,6 @@ export const gendata = [
     name: 'third',
     title: 'Gen III',
     img: ThirdGen,
-    desc: `This generation's first games were Ruby and Sapphire Version, followed by remakes of the original Gen I games FireRed and LeafGreen and finally ended with a third version of Ruby and Sapphire, Pokémon Emerald Version.`,
+    desc: `Third generation's first games were Ruby and Sapphire Version, followed by remakes of the original Gen I games FireRed and LeafGreen and finally ended with a third version of Ruby and Sapphire, Pokémon Emerald Version.`,
   },
 ];

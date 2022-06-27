@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { Box, Typography, LinearProgress } from '@mui/material';
 import PokemonCard from './PokemonCard';
+import { Link } from 'react-router-dom';
 
 const Firstgen = () => {
   const [pokedex, setPokedex] = useState(null);
@@ -15,12 +16,16 @@ const Firstgen = () => {
   return (
     <Box p={{ xs: '4px', sm: 4 }} flex={6}>
       <Typography variant='h5' px={1} pt={{ xs: 2, md: 0 }}>
-        GEN I: #001 - #151
+        Generation I Pokémon:
+      </Typography>
+      <Typography paragraph variant='caption' px={{ xs: 1 }}>
+        {' '}
+        #001 - #151
       </Typography>
       <br />
       <Box sx={{ flexGrow: 1, display: 'flex', flexWrap: 'wrap', justifyContent: { xs: 'center', md: 'flex-start' } }}>
         {pokedex ? (
-          pokedex.map((pokemon) => {
+          pokedex.map((pokemon, i) => {
             return (
               <Box key={pokemon.name} p={1}>
                 <PokemonCard {...{ pokemon }} />
