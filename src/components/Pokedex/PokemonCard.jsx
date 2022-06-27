@@ -56,8 +56,8 @@ export default function ActionAreaCard({ pokemon }) {
           sx={{
             background: TYPE_COLORS[pokemonData.types[0].type.name],
             // backgroundImage: `url("data:image/svg+xml,%3Csvg width='16' height='20' viewBox='0 0 16 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23a4a4a4' fill-opacity='0.42' fill-rule='evenodd'%3E%3Cpath d='M8 0v20L0 10M16 0v10L8 0M16 10v10H8'/%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundImage: normal,
-            backgroundBlendMode: totalPower(pokemonData) >= 580 ? 'difference' : 'darken',
+            backgroundImage: totalPower(pokemonData) >= 480 ? `url(${foil})` : normal,
+            backgroundBlendMode: totalPower(pokemonData) >= 480 ? 'luminosity' : 'darken',
             backgroundPosition: 'center',
           }}
         >
