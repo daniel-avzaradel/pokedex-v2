@@ -9,13 +9,9 @@ import { Box, Stack } from '@mui/material';
 
 const Layout = ({ mode, setMode }) => {
   return (
-    <Box bgcolor={'background.default'} color="text.primary">
+    <Box bgcolor={'background.default'} color='text.primary'>
       <Navbar {...{ mode, setMode }} />
-      <Stack
-        direction="row"
-        spacing={{ xs: 0, sm: 0 }}
-        justifyContent="space-between"
-      >
+      <Stack direction='row' spacing={{ xs: 0, sm: 0 }} justifyContent='space-between'>
         <Sidebar {...{ mode, setMode }} />
         <Outlet /> {/* <=== Routes rendered here */}
         <Rightbar />
