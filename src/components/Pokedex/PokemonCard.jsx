@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import typeColors from '../type-colors';
 
 import { Box, Stack, Typography } from '@mui/material';
 import StarIcon from '@mui/icons-material/Star';
@@ -20,26 +21,7 @@ export default function ActionAreaCard({ pokemon }) {
   const star = () => <StarIcon sx={{ width: 20, color: 'goldenrod', strokeWidth: 2, stroke: 'black' }} />;
   const cyanStar = () => <StarIcon sx={{ width: 20, color: 'cyan', strokeWidth: 2, stroke: 'black' }} />;
 
-  const TYPE_COLORS = {
-    bug: '#C3D21F',
-    dark: '#8A6653',
-    dragon: '#8A76FF',
-    electric: '#FEE744',
-    fairy: '#FBAEFF',
-    fighting: '#A45544',
-    fire: '#FA5543',
-    flying: '#79A4FF',
-    ghost: '#7874D4',
-    grass: '#8DD851',
-    ground: '#ECCE5B',
-    ice: '#96F1FF',
-    normal: '#BAB9AD',
-    poison: '#A85CA0',
-    psychic: '#F965B2',
-    rock: '#CEBD72',
-    steel: '#C2C0D8',
-    water: '#56AEFF',
-  };
+  const TYPE_COLORS = typeColors;
 
   const totalPower = (pokemonData) => {
     let sum = 0;

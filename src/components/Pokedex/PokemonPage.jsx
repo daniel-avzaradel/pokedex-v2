@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import typeColors from '../type-colors';
 
 import { Box, Card, CardMedia, Typography } from '@mui/material';
 
@@ -7,6 +8,7 @@ const PokemonPage = () => {
   const { id } = useParams();
   const [pokemon, setPokemon] = useState();
   let navigate = useNavigate();
+  const TYPE_COLORS = typeColors;
 
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
@@ -25,13 +27,23 @@ const PokemonPage = () => {
                 #{pokemon.id < 10 ? '00' + pokemon.id : pokemon.id < 100 ? '0' + pokemon.id : pokemon.id}
               </Typography>
             </Box>
-            <Typography variant='caption' onClick={() => navigate('/pokedex')}>
+            <Typography variant='caption' onClick={() => navigate('/pokedex')} sx={{ cursor: 'pointer' }}>
               {'<'}
               Back to pokedex
             </Typography>
           </Box>
           <Card sx={{ display: 'flex', my: 4 }}>
-            <Box sx={{ display: 'flex', px: 2 }}>
+            <Box
+              sx={{
+                display: 'flex',
+                px: 2,
+                background: TYPE_COLORS[pokemon.types[0].type.name],
+                opacity: '0.8',
+                backgroundSize: '7px 7px',
+                backgroundImage: 'repeating-linear-gradient(45deg, #444cf7 0, #444cf7 0.7000000000000001px, #e5e5f7 0, #e5e5f7 50%)',
+                backgroundBlendMode: 'overlay',
+              }}
+            >
               <CardMedia
                 height='280px'
                 component='img'
@@ -40,7 +52,9 @@ const PokemonPage = () => {
               />
             </Box>
             <Box m={4}>
-              <Typography my={1}>Abilities:</Typography>
+              <Typography my={1} color='secondary'>
+                Abilities:
+              </Typography>
               <Box display='flex'>
                 {pokemon.abilities.map((ab, i) => {
                   return (
