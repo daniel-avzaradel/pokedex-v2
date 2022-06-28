@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import { Box, Typography, LinearProgress } from '@mui/material';
-import PokemonCard from './PokemonCard';
+import PokemonCard from './PokemonCard/PokemonCard';
 import { Link } from 'react-router-dom';
 
 const Firstgen = () => {
@@ -14,7 +14,7 @@ const Firstgen = () => {
   }, []);
 
   return (
-    <Box p={{ xs: '4px', sm: 4 }} flex={6}>
+    <Box p={{ xs: '4px', sm: 4 }} flex={5}>
       <Typography variant='h5' px={1} pt={{ xs: 2, md: 0 }}>
         Generation I Pokémon:
       </Typography>

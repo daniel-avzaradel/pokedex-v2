@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import typeColors from '../type-colors';
 
 import { Box, Card, CardMedia, Typography } from '@mui/material';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const PokemonPage = () => {
   const { id } = useParams();
@@ -16,10 +17,12 @@ const PokemonPage = () => {
       .then((data) => setPokemon(data));
   }, []);
 
+  console.log(pokemon);
+
   return (
     <>
       {pokemon && (
-        <Box flex={6} p={4}>
+        <Box flex={5} p={4} minHeight={'86.3vh'}>
           <Box display={'flex'} alignItems='flex-end' justifyContent={'space-between'}>
             <Box flexDirection={'column'}>
               <Typography variant='h5'>{pokemon.name.toUpperCase()} </Typography>
@@ -27,12 +30,14 @@ const PokemonPage = () => {
                 #{pokemon.id < 10 ? '00' + pokemon.id : pokemon.id < 100 ? '0' + pokemon.id : pokemon.id}
               </Typography>
             </Box>
-            <Typography variant='caption' onClick={() => navigate('/pokedex')} sx={{ cursor: 'pointer' }}>
-              {'<'}
-              Back to pokedex
-            </Typography>
+            <Box display='flex' alignItems='center'>
+              <ArrowBackIcon />
+              <Typography variant='caption' onClick={() => navigate('/pokedex/firstgen')} sx={{ cursor: 'pointer', mx: 1, lineHeight: 1 }}>
+                BACK TO POKEDEX
+              </Typography>
+            </Box>
           </Box>
-          <Card sx={{ display: 'flex', my: 4 }}>
+          <Card sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row', md: 'row' }, my: 4 }}>
             <Box
               sx={{
                 display: 'flex',
@@ -45,24 +50,26 @@ const PokemonPage = () => {
               }}
             >
               <CardMedia
-                height='280px'
+                height='320px'
                 component='img'
                 image={pokemon.sprites.other['official-artwork'].front_default}
                 alt={pokemon.name}
               />
             </Box>
             <Box m={4}>
-              <Typography my={1} color='secondary'>
-                Abilities:
-              </Typography>
+              <Typography color='secondary'>Abilities:</Typography>
               <Box display='flex'>
-                {pokemon.abilities.map((ab, i) => {
-                  return (
-                    <Typography key={i} paragraph lineHeight={0.5} mr={1}>
-                      {ab.ability.name[0].toUpperCase() + ab.ability.name.substring(1)}
-                    </Typography>
-                  );
-                })}
+                <ul>
+                  {pokemon.abilities.map((ab, i) => {
+                    return (
+                      <li key={i}>
+                        <Typography paragraph lineHeight={0.5} mr={1}>
+                          {ab.ability.name[0].toUpperCase() + ab.ability.name.substring(1)}
+                        </Typography>
+                      </li>
+                    );
+                  })}
+                </ul>
               </Box>
             </Box>
           </Card>

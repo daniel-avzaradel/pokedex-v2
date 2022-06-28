@@ -8,7 +8,7 @@ import { Box, Grid, Stack, Typography } from '@mui/material';
 
 const Pokedex = () => {
   return (
-    <Box flex={6} p={4} minHeight={'100vh'}>
+    <Box flex={5} p={4} minHeight={'100vh'}>
       <Box display='flex' alignItems={'center'}>
         <Box>
           <img src={PokedexIcon} width='40' alt='Pokedex' />
@@ -45,7 +45,7 @@ const Pokedex = () => {
             xl: 'flex-start',
           }}
         >
-          <Grid container spacing={2} pr={{ md: 0, lg: 20, xl: 40 }}>
+          <Grid container spacing={2} pr={{ md: 0, lg: 20, xl: 30 }}>
             {gendata &&
               gendata.map((card) => {
                 return (
