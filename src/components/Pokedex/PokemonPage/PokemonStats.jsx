@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Typography } from '@mui/material';
 
 import typeColors from '../../type-colors';
-import statsColors from './stats-colors';
+import { statsColors, statBarColor } from './stats-colors';
 
 // styles
 import { useStyles } from './PokemonPageStyles';
@@ -12,41 +12,24 @@ const PokemonStats = ({ pokemon }) => {
   const TYPE_COLORS = typeColors;
   const stats_colors = statsColors;
 
-  const statBarWidth = (stat) => {
-    let width = stat.base_stat;
-    if (width >= 150) {
-      return '100%';
-    } else if (width >= 120) {
-      return '85%';
-    } else if (width >= 90) {
-      return '60%';
-    } else if (width >= 60) {
-      return '25%';
-    } else {
-      return '10%';
+  const calcWidth = (stat) => {
+    let finalWidth;
+    console.log(stat);
+    if (stat >= 150) {
+      finalWidth = 130 + 'px';
+    } else if (stat >= 120) {
+      finalWidth = stat * 1 + 'px';
+    } else if (stat >= 20) {
+      finalWidth = stat * 1 + 'px';
+    } else if (stat <= 20) {
+      finalWidth = 20 + 'px';
     }
-  };
-
-  const statBarColor = (stat, stats_colors) => {
-    let width = stat.base_stat;
-    let color = '';
-    if (width >= 150) {
-      color = 'darkturquoise';
-    } else if (width >= 120) {
-      color = 'mediumseagreen';
-    } else if (width >= 90) {
-      color = 'yellowgreen';
-    } else if (width >= 60) {
-      color = 'gold';
-    } else {
-      color = stats_colors.orangered;
-    }
-    return color;
+    return finalWidth;
   };
 
   return (
-    <Box width='50%'>
-      <Typography color='secondary' mb={2}>
+    <Box sx={{ width: { xs: '80%', sm: '50%' } }} mt={{ xs: 2, sm: 0 }}>
+      <Typography color='secondary' mb={1}>
         Base Stats:
       </Typography>
       <Box display='flex' flexDirection={'column'}>
@@ -58,7 +41,20 @@ const PokemonStats = ({ pokemon }) => {
                   {stat.stat.name[0].toUpperCase() + stat.stat.name.substring(1)}
                 </Typography>
               </Box>
-              <Box sx={{ height: '8px', width: statBarWidth(stat), background: statBarColor(stat, stats_colors) }}></Box>
+              <Box display='flex' alignItems={'center'}>
+                <div
+                  style={{
+                    borderRadius: '4px',
+                    my: '4px',
+                    height: '8px',
+                    width: calcWidth(stat.base_stat),
+                    background: statBarColor(stat, stats_colors),
+                  }}
+                ></div>
+                <Typography paragraph variant='caption' lineHeight={1} mx={1} my={0.5}>
+                  {stat.base_stat}
+                </Typography>
+              </Box>
             </Box>
           );
         })}
