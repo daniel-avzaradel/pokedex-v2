@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 import { Box, Typography, LinearProgress } from '@mui/material';
 import PokemonCard from './PokemonCard/PokemonCard';
-import { Link } from 'react-router-dom';
 
 const Firstgen = () => {
   const [pokedex, setPokedex] = useState(null);
@@ -27,8 +26,8 @@ const Firstgen = () => {
         {pokedex ? (
           pokedex.map((pokemon, i) => {
             return (
-              <Box key={pokemon.name} p={1}>
-                <PokemonCard {...{ pokemon }} />
+              <Box key={i} p={1}>
+                <PokemonCard key={i} {...{ pokemon }} />
               </Box>
             );
           })
