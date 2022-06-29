@@ -33,6 +33,7 @@ import Coin from '../../assets/coin.png';
 
 // styles
 import { useStyles } from './NarvbarStyles';
+import { Link } from 'react-router-dom';
 
 const StyledToolbar = styled(Toolbar)({
   display: 'flex',
@@ -75,96 +76,109 @@ const Navbar = ({ setMode, mode }) => {
   });
 
   const toggleDrawer = (anchor, open) => (event) => {
-    if (
-      event.type === 'keydown' &&
-      (event.key === 'Tab' || event.key === 'Shift')
-    ) {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
 
     setState({ ...state, [anchor]: open });
   };
 
+  const iconWidth = 26;
+  const textColor = (mode) => (mode === 'dark' ? '#fff' : '#333');
+
   const list = (anchor) => (
     <Box
       sx={{ width: anchor === 'top' || anchor === 'bottom' ? 250 : 'auto' }}
-      role="presentation"
+      role='presentation'
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
         <ListItem disablePadding>
-          <ListItemButton component="a" href="#home">
+          <Link
+            to='/'
+            style={{
+              textDecoration: 'none',
+              color: textColor(mode),
+            }}
+          >
+            <ListItemButton>
+              <ListItemIcon>
+                <img src={Pokeball} alt='Pokeball' width={iconWidth} />
+              </ListItemIcon>
+              <Typography variant='body2'>Home Page</Typography>
+            </ListItemButton>
+          </Link>
+        </ListItem>
+
+        <ListItem disablePadding>
+          <Link
+            to='/pokedex'
+            style={{
+              textDecoration: 'none',
+              color: textColor(mode),
+            }}
+          >
+            <ListItemButton>
+              <ListItemIcon>
+                <img src={PikachuIcon} alt='Pikachu Icon' width={iconWidth} />
+              </ListItemIcon>
+              <Typography variant='body2'>Pokedex</Typography>
+            </ListItemButton>
+          </Link>
+        </ListItem>
+
+        <ListItem disablePadding>
+          <ListItemButton component='a' href='#myteams'>
             <ListItemIcon>
-              <img src={Pokeball} alt="Pokeball" width={26} />
+              <img src={Pokeballs} alt='My Teams' width={iconWidth} />
             </ListItemIcon>
-            <ListItemText primary="Home Page" />
+            <Typography variant='body2'>My Teams</Typography>
           </ListItemButton>
         </ListItem>
 
         <ListItem disablePadding>
-          <ListItemButton component="a" href="#pokedex">
+          <ListItemButton component='a' href='#leaderboard'>
             <ListItemIcon>
-              <img src={PikachuIcon} alt="Pikachu Icon" width={26} />
+              <img src={Leaderboard} alt='Leaderboard' width={iconWidth} />
             </ListItemIcon>
-            <ListItemText primary="Pokedex Entries" />
+            <Typography variant='body2'>Leaderboard</Typography>
           </ListItemButton>
         </ListItem>
 
         <ListItem disablePadding>
-          <ListItemButton component="a" href="#myteams">
+          <ListItemButton component='a' href='#marketplace'>
             <ListItemIcon>
-              <img src={Pokeballs} alt="My Teams" width={26} />
+              <img src={Coin} alt='Marketplace' width={iconWidth} />
             </ListItemIcon>
-            <ListItemText primary="My Teams" />
+            <Typography variant='body2'>Marketplace</Typography>
           </ListItemButton>
         </ListItem>
 
         <ListItem disablePadding>
-          <ListItemButton component="a" href="#leaderboard">
+          <ListItemButton component='a' href='#friends'>
             <ListItemIcon>
-              <img src={Leaderboard} alt="Leaderboard" width={26} />
+              <img src={Meowth} alt='Friends' width={iconWidth} />
             </ListItemIcon>
-            <ListItemText primary="Leaderboard" />
+            <Typography variant='body2'>Friends</Typography>
           </ListItemButton>
         </ListItem>
 
         <ListItem disablePadding>
-          <ListItemButton component="a" href="#marketplace">
+          <ListItemButton component='a' href='#profile'>
             <ListItemIcon>
-              <img src={Coin} alt="Marketplace" width={26} />
+              <img src={Trainer} alt='Trainer' width={iconWidth} />
             </ListItemIcon>
-            <ListItemText primary="Marketplace" />
-          </ListItemButton>
-        </ListItem>
-
-        <ListItem disablePadding>
-          <ListItemButton component="a" href="#friends">
-            <ListItemIcon>
-              <img src={Meowth} alt="Friends" width={26} />
-            </ListItemIcon>
-            <ListItemText primary="Friends" />
-          </ListItemButton>
-        </ListItem>
-
-        <ListItem disablePadding>
-          <ListItemButton component="a" href="#profile">
-            <ListItemIcon>
-              <img src={Trainer} alt="Trainer" width={26} />
-            </ListItemIcon>
-            <ListItemText primary="Profile" />
+            <Typography variant='body2'>Profile</Typography>
           </ListItemButton>
         </ListItem>
 
         <ListItem disablePadding>
           <ListItemButton disableRipple>
             <ListItemIcon>
-              <img src={ZubatIcon} alt="Zubat Icon" width={26} />
+              <img src={ZubatIcon} alt='Zubat Icon' width={iconWidth} />
             </ListItemIcon>
-            <Switch
-              onChange={(e) => setMode(mode === 'light' ? 'dark' : 'light')}
-              checked={mode === 'dark' ? true : false}
-            />
+            <Switch onChange={(e) => setMode(mode === 'light' ? 'dark' : 'light')} checked={mode === 'dark' ? true : false} />
           </ListItemButton>
         </ListItem>
       </List>
@@ -173,10 +187,10 @@ const Navbar = ({ setMode, mode }) => {
   );
 
   return (
-    <AppBar position="sticky">
+    <AppBar position='sticky'>
       <StyledToolbar>
         <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex' } }}>
-          <Typography variant="h6">POKEDEX v2.0</Typography>
+          <Typography variant='h6'>POKEDEX v2.0</Typography>
         </Box>
         <Box
           sx={{
@@ -188,37 +202,33 @@ const Navbar = ({ setMode, mode }) => {
         >
           <img
             src={Pokeball}
-            alt="Pokeball"
+            alt='Pokeball'
             width={30}
             style={{ marginRight: '10px' }}
             className={classes.pokeball}
             onClick={toggleDrawer('top', true)}
           />
         </Box>
-        <Drawer
-          anchor={'top'}
-          open={state['top']}
-          onClose={toggleDrawer('top', false)}
-        >
+        <Drawer anchor={'top'} open={state['top']} onClose={toggleDrawer('top', false)}>
           {list('top')}
         </Drawer>
         <Icons>
-          <Badge badgeContent={10} color="error">
+          <Badge badgeContent={10} color='error'>
             <EmailIcon />
           </Badge>
-          <Badge badgeContent={10} color="error" sx={{ m: 2 }}>
+          <Badge badgeContent={10} color='error' sx={{ m: 2 }}>
             <NotificationsIcon />
           </Badge>
           <Avatar sx={{ width: 30, height: 30 }} onClick={handleClick} />
         </Icons>
         <UserBox onClick={handleClick}>
           <Avatar sx={{ width: 30, height: 30 }} />
-          <Typography variant="span">Daniel</Typography>
+          <Typography variant='span'>Daniel</Typography>
         </UserBox>
       </StyledToolbar>
       <Menu
-        id="demo-positioned-menu"
-        aria-labelledby="demo-positioned-button"
+        id='demo-positioned-menu'
+        aria-labelledby='demo-positioned-button'
         open={open}
         anchorEl={anchorEl}
         onClose={(e) => setOpen(false)}
