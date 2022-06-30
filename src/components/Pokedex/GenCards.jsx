@@ -9,6 +9,7 @@ export default function GenCards({ gendata }) {
   return (
     <Card
       sx={{
+        minWidth: { lg: 280 },
         minHeight: { md: 340, lg: 320, xl: 340 },
       }}
       elevation={2}

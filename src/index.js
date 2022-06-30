@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 
-import Home from './components/Home';
+import Home from './components/Home/Home';
 import Pokedex from './components/Pokedex/Pokedex';
 import Firstgen from './components/Pokedex/Firstgen';
 import Secondgen from './components/Pokedex/Secondgen';

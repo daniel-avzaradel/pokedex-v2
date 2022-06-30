@@ -45,7 +45,7 @@ const Pokedex = () => {
             xl: 'flex-start',
           }}
         >
-          <Grid container spacing={2} pr={{ md: 0, lg: 20, xl: 30 }}>
+          <Grid container spacing={2} pr={{ md: 0, lg: 0, xl: 10 }}>
             {gendata &&
               gendata.map((card) => {
                 return (

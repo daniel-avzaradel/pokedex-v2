@@ -27,6 +27,13 @@ const PokemonPage = () => {
 
   console.log(pokemon);
 
+  const totalPower = (pokemon) => {
+    let sum = 0;
+    pokemon.stats.map((stat) => (sum += stat.base_stat));
+    return sum;
+  };
+  const foil = `url('https://66.media.tumblr.com/bdca2e7a23acbfa0ca72af1ebff0b3d5/tumblr_pn2353aM1Y1uqkuw9o1_540.gif')`;
+
   const prevPage = (id) => {
     if (id === 1) {
       navigate('/pokedex/151');
@@ -46,7 +53,7 @@ const PokemonPage = () => {
   return (
     <>
       {pokemon && (
-        <Box flex={{ md: 5, xl: 2 }} p={4} minHeight={'86.3vh'}>
+        <Box flex={{ md: 5, lg: 5, xl: 3 }} p={4} minHeight={'86.3vh'}>
           <Typography variant='h5'>{pokemon.name.toUpperCase()} </Typography>
           <Box>
             <Box display='flex' alignItems='center' justifyContent={'space-between'} width='100%'>
@@ -76,9 +83,21 @@ const PokemonPage = () => {
             </Box>
           </Box>
           <Card sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row', md: 'row' }, my: 2 }}>
-            <Box className={classes.cardmedia} sx={{ background: TYPE_COLORS[pokemon.types[0].type.name] }}>
+            <Box
+              className={classes.cardmedia}
+              sx={{
+                background: TYPE_COLORS[pokemon.types[0].type.name],
+              }}
+            >
               <CardMedia
-                sx={{ minWidth: 260 }}
+                sx={{
+                  minWidth: 260,
+                  background: TYPE_COLORS[pokemon.types[0].type.name],
+                  backgroundImage: totalPower(pokemon) >= 505 ? foil : '',
+                  backgroundPosition: 'center',
+                  backgroundBlendMode: totalPower(pokemon) >= 505 ? 'luminosity' : 'normal',
+                  border: totalPower(pokemon) >= 505 ? `4px solid ${TYPE_COLORS[pokemon.types[0].type.name]}` : '',
+                }}
                 component='img'
                 image={pokemon.sprites.other['official-artwork'].front_default}
                 alt={pokemon.name}

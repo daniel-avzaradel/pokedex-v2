@@ -29,7 +29,7 @@ const PokemonCard = ({ pokemon }) => {
     return sum;
   };
 
-  // const foil = `https://66.media.tumblr.com/bdca2e7a23acbfa0ca72af1ebff0b3d5/tumblr_pn2353aM1Y1uqkuw9o1_540.gif`;
+  const foil = `url('https://66.media.tumblr.com/bdca2e7a23acbfa0ca72af1ebff0b3d5/tumblr_pn2353aM1Y1uqkuw9o1_540.gif')`;
   const normal = `url("data:image/svg+xml,%3Csvg width='16' height='20' viewBox='0 0 16 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23a4a4a4' fill-opacity='0.42' fill-rule='evenodd'%3E%3Cpath d='M8 0v20L0 10M16 0v10L8 0M16 10v10H8'/%3E%3C/g%3E%3C/svg%3E")`;
 
   return (
@@ -41,8 +41,8 @@ const PokemonCard = ({ pokemon }) => {
               className={classes.cardContainer}
               sx={{
                 background: TYPE_COLORS[pokemonData.types[0].type.name],
-                backgroundImage: normal,
-                backgroundBlendMode: 'darken',
+                backgroundImage: totalPower(pokemonData) >= 505 ? foil : normal,
+                backgroundBlendMode: totalPower(pokemonData) >= 505 ? 'luminosity' : 'darken',
                 backgroundPosition: 'center',
               }}
             >

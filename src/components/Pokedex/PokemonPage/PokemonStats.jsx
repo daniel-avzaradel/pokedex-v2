@@ -8,17 +8,15 @@ import { statsColors, statBarColor } from './stats-colors';
 import { useStyles } from './PokemonPageStyles';
 
 const PokemonStats = ({ pokemon }) => {
-  const classes = useStyles();
-  const TYPE_COLORS = typeColors;
   const stats_colors = statsColors;
 
   const calcWidth = (stat) => {
     let finalWidth;
     console.log(stat);
     if (stat >= 150) {
-      finalWidth = 130 + 'px';
+      finalWidth = 140 + 'px';
     } else if (stat >= 120) {
-      finalWidth = stat * 1 + 'px';
+      finalWidth = stat * 0.95 + 'px';
     } else if (stat >= 20) {
       finalWidth = stat * 1 + 'px';
     } else if (stat <= 20) {
