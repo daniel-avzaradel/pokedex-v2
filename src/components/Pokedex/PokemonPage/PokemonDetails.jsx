@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Stack, Typography } from '@mui/material';
+import StarIcon from '@mui/icons-material/Star';
 
 import typeColors from '../../type-colors';
 
@@ -9,6 +10,15 @@ import { useStyles } from './PokemonPageStyles';
 const PokemonDetails = ({ pokemon }) => {
   const classes = useStyles();
   const TYPE_COLORS = typeColors;
+
+  const star = () => <StarIcon sx={{ width: 20, color: 'goldenrod', strokeWidth: 2, stroke: 'black' }} />;
+  const cyanStar = () => <StarIcon sx={{ width: 20, color: 'cyan', strokeWidth: 2, stroke: 'black' }} />;
+
+  const totalPower = (pokemonData) => {
+    let sum = 0;
+    pokemonData.stats.map((stat) => (sum += stat.base_stat));
+    return sum;
+  };
 
   return (
     <Box sx={{ width: { xs: '70%', sm: '60%' } }}>
@@ -52,6 +62,22 @@ const PokemonDetails = ({ pokemon }) => {
           <Typography paragraph lineHeight={0.5} my={1} textAlign='left'>
             {pokemon.height / 10}m
           </Typography>
+        </Box>
+      </Box>
+      <Box my={2} display='flex' flexDirection={'column'}>
+        <Typography color='secondary'>Total Power:</Typography>
+        <Box>
+          {totalPower(pokemon) >= 580
+            ? Array(6).fill(cyanStar())
+            : totalPower(pokemon) >= 540
+            ? Array(5).fill(star())
+            : totalPower(pokemon) >= 500
+            ? Array(4).fill(star())
+            : totalPower(pokemon) >= 420
+            ? Array(3).fill(star())
+            : totalPower(pokemon) >= 360
+            ? Array(2).fill(star())
+            : star()}
         </Box>
       </Box>
     </Box>

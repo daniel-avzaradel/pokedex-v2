@@ -1,11 +1,9 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 
-import typeColors from '../../type-colors';
 import { statsColors, statBarColor } from './stats-colors';
 
 // styles
-import { useStyles } from './PokemonPageStyles';
 
 const PokemonStats = ({ pokemon }) => {
   const stats_colors = statsColors;

@@ -19,7 +19,7 @@ const PokemonCard = ({ pokemon }) => {
   }, [pokemon.url]);
 
   const star = () => <StarIcon sx={{ width: 20, color: 'goldenrod', strokeWidth: 2, stroke: 'black' }} />;
-  // const cyanStar = () => <StarIcon sx={{ width: 20, color: 'cyan', strokeWidth: 2, stroke: 'black' }} />;
+  const cyanStar = () => <StarIcon sx={{ width: 20, color: 'cyan', strokeWidth: 2, stroke: 'black' }} />;
 
   const TYPE_COLORS = typeColors;
 
@@ -49,6 +49,8 @@ const PokemonCard = ({ pokemon }) => {
               <Stack position={'relative'} direction='column'>
                 <Box display={'flex'} justifyContent='flex-start' mt={1} width='100%' height='22px'>
                   {totalPower(pokemonData) >= 580
+                    ? Array(6).fill(cyanStar())
+                    : totalPower(pokemonData) >= 540
                     ? Array(5).fill(star())
                     : totalPower(pokemonData) >= 500
                     ? Array(4).fill(star())
