@@ -41,8 +41,8 @@ const PokemonCard = ({ pokemon }) => {
               className={classes.cardContainer}
               sx={{
                 background: TYPE_COLORS[pokemonData.types[0].type.name],
-                backgroundImage: totalPower(pokemonData) >= 505 ? foil : normal,
-                backgroundBlendMode: totalPower(pokemonData) >= 505 ? 'luminosity' : 'darken',
+                backgroundImage: totalPower(pokemonData) >= 530 ? foil : normal,
+                backgroundBlendMode: totalPower(pokemonData) >= 530 ? 'luminosity' : 'darken',
                 backgroundPosition: 'center',
               }}
             >
@@ -50,7 +50,7 @@ const PokemonCard = ({ pokemon }) => {
                 <Box display={'flex'} justifyContent='flex-start' mt={1} width='100%' height='22px'>
                   {totalPower(pokemonData) >= 580
                     ? Array(6).fill(cyanStar())
-                    : totalPower(pokemonData) >= 540
+                    : totalPower(pokemonData) >= 530
                     ? Array(5).fill(star())
                     : totalPower(pokemonData) >= 500
                     ? Array(4).fill(star())
