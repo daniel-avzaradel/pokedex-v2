@@ -77,7 +77,7 @@ const PokemonPage = () => {
                   onClick={() => navigate('/pokedex/firstgen')}
                   sx={{ cursor: 'pointer', mx: 1, lineHeight: 1 }}
                 >
-                  BACK TO POKEDEX
+                  BACK TO POKEDEX.
                 </Typography>
               </Box>
             </Box>

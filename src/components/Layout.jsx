@@ -2,7 +2,7 @@ import React from 'react';
 
 import Navbar from './Navbar/Navbar';
 import Sidebar from './Sidebar/Sidebar';
-import Rightbar from './Rightbar';
+import Rightbar from './Rightbar/Rightbar';
 import { Outlet } from 'react-router-dom';
 
 import { Box, Stack } from '@mui/material';
