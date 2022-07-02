@@ -70,11 +70,11 @@ const PokemonCard = ({ pokemon }) => {
                   />
                 </Box>
                 <Box px={2} className={classes.cardTitle} mt={1} sx={{ width: 120 }} height='88px'>
-                  <Typography variant='body2' fontSize={'0.75rem'} fontWeight={500} mt={1}>
+                  <Typography variant='body2' fontSize={'0.8rem'} fontWeight={500} mt={2}>
                     {pokemonData.name.toUpperCase()}
                     {''} #{pokemonData.id < 10 ? '00' + pokemonData.id : pokemonData.id < 100 ? '0' + pokemonData.id : pokemonData.id}
                   </Typography>
-                  <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', py: 1 }}>
+                  <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', py: 0 }}>
                     {pokemonData.types.map((type, i) => {
                       return (
                         <div key={i}>
