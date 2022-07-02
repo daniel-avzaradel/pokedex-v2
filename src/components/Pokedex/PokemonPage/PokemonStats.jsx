@@ -24,7 +24,7 @@ const PokemonStats = ({ pokemon }) => {
 
   return (
     <Box sx={{ width: { xs: '80%', sm: '50%' } }} mt={{ xs: 2, sm: 0 }}>
-      <Typography color='secondary' mb={1}>
+      <Typography color='secondary' mb={2}>
         Base Stats:
       </Typography>
       <Box display='flex' flexDirection={'column'}>
