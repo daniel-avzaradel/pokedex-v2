@@ -63,7 +63,7 @@ const PokemonPage = () => {
                   backgroundImage: totalPower(pokemon) >= 505 ? foil : '',
                   backgroundPosition: 'center',
                   backgroundBlendMode: totalPower(pokemon) >= 505 ? 'luminosity' : 'normal',
-                  border: totalPower(pokemon) >= 505 ? `4px solid ${TYPE_COLORS[pokemon.types[0].type.name]}` : '',
+                  border: totalPower(pokemon) >= 505 ? `6px solid ${TYPE_COLORS[pokemon.types[0].type.name]}` : '',
                 }}
                 component='img'
                 image={pokemon.sprites.other['official-artwork'].front_default}
