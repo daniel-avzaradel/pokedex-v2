@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import { Box, Card, CardMedia, IconButton, Typography } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import typeColors from '../../type-colors';
-import { prevPage, nextPage, backToPokedex } from './Navigate';
+import { PrevPage, NextPage, BackToPokedex } from '../../Utils/Navigate/Navigate';
 
 // styles
 import { useStyles } from './PokemonPageStyles';
@@ -15,7 +14,6 @@ import PokemonStats from './PokemonStats';
 const PokemonPage = () => {
   const classes = useStyles();
   const { id } = useParams();
-  let navigate = useNavigate();
 
   const [pokemon, setPokemon] = useState();
   const TYPE_COLORS = typeColors;
@@ -41,25 +39,14 @@ const PokemonPage = () => {
           <Typography variant='h5'>{pokemon.name.toUpperCase()} </Typography>
           <Box>
             <Box display='flex' alignItems='center' justifyContent={'space-between'} width='100%'>
-              <Box>
+              <Box display={'flex'} alignItems='center'>
+                <PrevPage id={pokemon.id} />
                 <Typography variant='body2'>
-                  <IconButton sx={{ p: 0 }} onClick={() => prevPage(pokemon.id)}>
-                    <ArrowBackIcon />
-                  </IconButton>
                   #{pokemon.id < 10 ? '00' + pokemon.id : pokemon.id < 100 ? '0' + pokemon.id : pokemon.id}
-                  <IconButton sx={{ p: 0 }} onClick={() => nextPage(pokemon.id)}>
-                    <ArrowForwardIcon />
-                  </IconButton>
                 </Typography>
+                <NextPage id={pokemon.id} />
               </Box>
-              <Box>
-                <IconButton sx={{ p: 0 }} onClick={() => backToPokedex(pokemon.id)}>
-                  <ArrowBackIcon />
-                </IconButton>
-                <Typography variant='caption' onClick={() => backToPokedex(pokemon.id)} sx={{ cursor: 'pointer', mx: 1, lineHeight: 1 }}>
-                  BACK TO POKEDEX
-                </Typography>
-              </Box>
+              <BackToPokedex id={pokemon.id} />
             </Box>
           </Box>
           <Card sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row', md: 'row' }, my: 2 }}>
