@@ -5,6 +5,7 @@ import { Box, Card, CardMedia, IconButton, Typography } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import typeColors from '../../type-colors';
+import { prevPage, nextPage, backToPokedex } from './Navigate';
 
 // styles
 import { useStyles } from './PokemonPageStyles';
@@ -25,30 +26,13 @@ const PokemonPage = () => {
       .then((data) => setPokemon(data));
   }, [id]);
 
-  console.log(pokemon);
-
   const totalPower = (pokemon) => {
     let sum = 0;
     pokemon.stats.map((stat) => (sum += stat.base_stat));
     return sum;
   };
+
   const foil = `url('https://66.media.tumblr.com/bdca2e7a23acbfa0ca72af1ebff0b3d5/tumblr_pn2353aM1Y1uqkuw9o1_540.gif')`;
-
-  const prevPage = (id) => {
-    if (id === 1) {
-      navigate('/pokedex/151');
-    } else {
-      navigate(`/pokedex/${id - 1}`);
-    }
-  };
-
-  const nextPage = (id) => {
-    if (id === 151) {
-      navigate('/pokedex/1');
-    } else {
-      navigate(`/pokedex/${id + 1}`);
-    }
-  };
 
   return (
     <>
@@ -69,14 +53,10 @@ const PokemonPage = () => {
                 </Typography>
               </Box>
               <Box>
-                <IconButton sx={{ p: 0 }} onClick={() => navigate('/pokedex/firstgen')}>
+                <IconButton sx={{ p: 0 }} onClick={() => backToPokedex(pokemon.id)}>
                   <ArrowBackIcon />
                 </IconButton>
-                <Typography
-                  variant='caption'
-                  onClick={() => navigate('/pokedex/firstgen')}
-                  sx={{ cursor: 'pointer', mx: 1, lineHeight: 1 }}
-                >
+                <Typography variant='caption' onClick={() => backToPokedex(pokemon.id)} sx={{ cursor: 'pointer', mx: 1, lineHeight: 1 }}>
                   BACK TO POKEDEX
                 </Typography>
               </Box>

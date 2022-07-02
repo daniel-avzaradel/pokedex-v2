@@ -10,7 +10,6 @@ const PokemonStats = ({ pokemon }) => {
 
   const calcWidth = (stat) => {
     let finalWidth;
-    console.log(stat);
     if (stat >= 150) {
       finalWidth = 140 + 'px';
     } else if (stat >= 120) {
@@ -31,7 +30,7 @@ const PokemonStats = ({ pokemon }) => {
       <Box display='flex' flexDirection={'column'}>
         {pokemon.stats.map((stat, i) => {
           return (
-            <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+            <Box key={i} sx={{ display: 'flex', flexDirection: 'column' }}>
               <Box>
                 <Typography paragraph lineHeight={1} key={i} textAlign='left' m='0'>
                   {stat.stat.name[0].toUpperCase() + stat.stat.name.substring(1)}

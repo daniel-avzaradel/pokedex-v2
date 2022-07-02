@@ -27,7 +27,7 @@ const PokemonDetails = ({ pokemon }) => {
         <Stack direction='column' mt={1} mb={2}>
           {pokemon.abilities.map((ab, i) => {
             return (
-              <Typography paragraph lineHeight={0.5} my={1}>
+              <Typography paragraph lineHeight={0.5} my={1} key={i}>
                 {ab.ability.name[0].toUpperCase() + ab.ability.name.substring(1)}
               </Typography>
             );
@@ -69,7 +69,7 @@ const PokemonDetails = ({ pokemon }) => {
         <Box>
           {totalPower(pokemon) >= 580
             ? Array(6).fill(cyanStar())
-            : totalPower(pokemon) >= 540
+            : totalPower(pokemon) >= 530
             ? Array(5).fill(star())
             : totalPower(pokemon) >= 500
             ? Array(4).fill(star())
