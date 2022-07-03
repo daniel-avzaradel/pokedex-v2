@@ -19,7 +19,7 @@ const Home = () => {
         <Typography paragraph>
           After graduating from Developers Institute in July 2021, I was hired as part of Developers Institute's internship program as an
           Intern Frontend Software Engineer by serverless development startup platform Appdrag for four months. Two months later I landed my
-          first job as a developer working on a cloud platform for a biotech israeli company Compugen as part of the discovery and
+          first job as a developer working on a cloud platform for the biotech israeli company Compugen as part of the discovery and
           development team helping develop their computational discovery platform to identify novel drug targets.
         </Typography>
         <Typography paragraph></Typography>
@@ -31,14 +31,16 @@ const Home = () => {
           Frontend Software Engineer
         </Typography>
         <Box py={4} sx={{ display: 'flex', alignItems: 'center' }}>
-          <img src={Squirtle} alt='Squirtle' width={260} />
+          <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
+            <img src={Squirtle} alt='Squirtle' width={260} />
+          </Box>
           <Link
             style={{
               textDecoration: 'none',
             }}
             to='/pokedex'
           >
-            <Button variant='contained' sx={{ marginLeft: 4 }}>
+            <Button variant='contained' sx={{ marginLeft: { xs: 0, sm: 2 } }}>
               POKEDEX ENTRIES
             </Button>
           </Link>
