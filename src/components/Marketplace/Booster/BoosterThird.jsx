@@ -22,7 +22,7 @@ export default function BoosterThird() {
     'linear-gradient(135deg, #009ec3 25%, transparent 25%), linear-gradient(225deg, #009ec3 25%, transparent 25%), linear-gradient(45deg, #009ec3 25%, transparent 25%), linear-gradient(315deg, #009ec3 25%, #005e74 25%)';
 
   return (
-    <Card sx={{ maxWidth: 260, border: '4px solid #021d19', boxSizing: 'border-box', p: 1, background: '#005e74' }}>
+    <Card sx={{ maxWidth: 260, border: '4px solid #009ec3', boxSizing: 'border-box', p: 1, background: '#005e74' }}>
       <CardActionArea
         sx={{
           background: '#005e74',

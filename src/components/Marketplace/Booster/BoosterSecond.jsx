@@ -22,7 +22,7 @@ export default function BoosterSecond() {
     'linear-gradient(135deg, #0fb398 25%, transparent 25%), linear-gradient(225deg, #0fb398 25%, transparent 25%), linear-gradient(45deg, #0fb398 25%, transparent 25%), linear-gradient(315deg, #0fb398 25%, #084a3f 25%)';
 
   return (
-    <Card sx={{ maxWidth: 260, border: '4px solid #021d19', boxSizing: 'border-box', p: 1, background: '#084a3f' }}>
+    <Card sx={{ maxWidth: 260, border: '4px solid #0fb398', boxSizing: 'border-box', p: 1, background: '#084a3f' }}>
       <CardActionArea
         sx={{
           background: '#084a3f',

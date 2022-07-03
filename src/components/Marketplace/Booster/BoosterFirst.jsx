@@ -19,13 +19,13 @@ export default function BoosterFirst() {
 
   console.log(pokeImg);
   const bg =
-    'linear-gradient(135deg, #672e00 25%, transparent 25%), linear-gradient(225deg, #672e00 25%, transparent 25%), linear-gradient(45deg, #672e00 25%, transparent 25%), linear-gradient(315deg, #672e00 25%, #b3a30f 25%)';
+    'linear-gradient(135deg, #ffb7a0 25%, transparent 25%), linear-gradient(225deg, #ffb7a0 25%, transparent 25%), linear-gradient(45deg, #ffb7a0 25%, transparent 25%), linear-gradient(315deg, #ffb7a0 25%, #814006 25%)';
 
   return (
-    <Card sx={{ maxWidth: 260, border: '4px solid #ab7951', boxSizing: 'border-box', p: 1, background: '#672e00' }}>
+    <Card sx={{ maxWidth: 260, border: '4px solid #d16302', boxSizing: 'border-box', p: 1, background: '#672e00' }}>
       <CardActionArea
         sx={{
-          background: '#e5e5f7',
+          background: '#814006',
           backgroundImage: bg,
           backgroundBlendMode: 'hard-light',
           backgroundSize: 'no-repeat',
