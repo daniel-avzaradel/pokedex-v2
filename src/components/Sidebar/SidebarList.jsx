@@ -70,12 +70,20 @@ const SidebarList = ({ setMode, mode }) => {
       </ListItem>
 
       <ListItem disablePadding>
-        <ListItemButton component='a' href='#marketplace'>
-          <ListItemIcon>
-            <img src={Coin} alt='Marketplace' width={iconWidth} />
-          </ListItemIcon>
-          <Typography variant='body2'>Marketplace</Typography>
-        </ListItemButton>
+        <Link
+          to='/marketplace'
+          style={{
+            textDecoration: 'none',
+            color: textColor(mode),
+          }}
+        >
+          <ListItemButton component='a' href='#marketplace'>
+            <ListItemIcon>
+              <img src={Coin} alt='Marketplace' width={iconWidth} />
+            </ListItemIcon>
+            <Typography variant='body2'>Marketplace</Typography>
+          </ListItemButton>
+        </Link>
       </ListItem>
 
       <ListItem disablePadding>

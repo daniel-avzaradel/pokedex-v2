@@ -16,7 +16,7 @@ const PokemonDetails = ({ pokemon }) => {
 
   const totalPower = (pokemonData) => {
     let sum = 0;
-    pokemonData.stats.map((stat) => (sum += stat.base_stat));
+    pokemonData.stats.forEach((stat) => (sum += stat.base_stat));
     return sum;
   };
 
@@ -40,6 +40,7 @@ const PokemonDetails = ({ pokemon }) => {
           return (
             <div key={i} style={{ width: 120 }}>
               <Typography
+                key={i}
                 variant='caption'
                 className={classes.typeBtn}
                 sx={{ my: 1, background: TYPE_COLORS[type.type.name], color: '#333' }}

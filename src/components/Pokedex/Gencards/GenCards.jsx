@@ -16,7 +16,7 @@ export default function GenCards({ gendata }) {
     >
       <CardActionArea>
         <Link to={`/pokedex/${gendata.name + 'gen'}`} style={{ textDecoration: 'none', color: textColor() }}>
-          <CardMedia component='img' height='auto' image={gendata.img} alt='green iguana' />
+          <CardMedia component='img' height='auto' image={gendata.img} alt={`${gendata.name} generation card`} />
           <CardContent>
             <Typography gutterBottom variant='h5' fontSize={'1rem'} component='div' color={'text.primary'}>
               {gendata.title}

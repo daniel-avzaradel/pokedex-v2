@@ -8,6 +8,7 @@ import Firstgen from './components/Pokedex/Firstgen/Firstgen';
 import Secondgen from './components/Pokedex/Secondgen/Secondgen';
 import Thirdgen from './components/Pokedex/Thirdgen/Thirdgen';
 import PokemonPage from './components/Pokedex/PokemonPage/PokemonPage';
+import Marketplace from './components/Marketplace/Marketplace';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -25,6 +26,7 @@ root.render(
             <Route path='thirdgen' element={<Thirdgen />} />
             <Route path=':id' element={<PokemonPage />} />
           </Route>
+          <Route path='marketplace' element={<Marketplace />} />
         </Route>
       </Routes>
     </BrowserRouter>
