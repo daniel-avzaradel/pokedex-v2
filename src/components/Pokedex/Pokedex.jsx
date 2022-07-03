@@ -1,8 +1,8 @@
 import React from 'react';
 
-import GenCards from './GenCards';
+import GenCards from './Gencards/GenCards';
 import PokedexIcon from '../../assets/pokedex.png';
-import { gendata } from './gendata';
+import { gendata } from './Gencards/gendata';
 
 import { Box, Grid, Stack, Typography } from '@mui/material';
 
