@@ -3,6 +3,8 @@ import { Box, Stack, Typography } from '@mui/material';
 
 import Coin from '../../assets/coin.png';
 import BoosterFirst from './Booster/BoosterFirst';
+import BoosterSecond from './Booster/BoosterSecond';
+import BoosterThird from './Booster/BoosterThird';
 
 const Marketplace = () => {
   return (
@@ -14,8 +16,10 @@ const Marketplace = () => {
         </Typography>
       </Box>
       <Box py={4}>
-        <Stack direction='row'>
+        <Stack direction='row' gap={2}>
           <BoosterFirst />
+          <BoosterSecond />
+          <BoosterThird />
         </Stack>
       </Box>
     </Box>
